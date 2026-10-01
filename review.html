@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+  .navbar{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+            padding: 20px 60px;
+        }
+        .nav-links{
+         display: flex;
+        gap: 30px;
+        list-style: none;
+        }
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .navbar  ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn{
+            background-color: orangered;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius:5px;
+    
+        }
+         .sab-h2{
+            color: red;
+            font-weight: bold;
+        
+        }
+        .sab h3{
+            color: #2b3952;
+            font-weight: bold;
+        }
+        .sub img{
+            height: 50px;
+            width: 20px;
+            position: absolute;
+            left: 10px;
+        }
+        
+        .sab1 img{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            left: 10px;
+        }
+        .sab h2{
+            color: red;
+        }
+
+        nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.order-btn {
+  background-color: #be2e3a;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+        .review{
+    padding:80px 0;
+}
+
+.title1{
+    text-align:center;
+}
+
+.title1 p{
+    color:orangered;
+    font-style:italic;
+    font-size: large;
+}
+
+.title1 h1{
+    font-size:55px;
+    color:darkred;
+}
+
+.title1 span{
+    color:red;
+}
+
+.review-box{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:60px;
+}
+
+.card1{
+    width:320px;
+}
+
+.star{
+    color:orange;
+    font-size:20px;
+}
+
+.card1 p{
+    line-height:2;
+    color:darkgray;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.profile img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+}
+/* MOBILE RESPONSIVE */
+@media (max-width:768px){
+
+  .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:15px;
+    position:relative;
+  }
+
+  /* Logo section */
+  .sub{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .sub img{
+    width:40px;
+    height:40px;
+    position:static;
+  }
+
+  .sub h2{
+    font-size:22px;
+  }
+
+  .sub h3{
+    display:none;
+  }
+
+  /* Menu Icon Right Side */
+  .menu-toggle{
+    display:block;
+    font-size:30px;
+    cursor:pointer;
+    margin-left:auto;
+  }
+
+  /* Hide menu initially */
+  .nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    margin-top:15px;
+    background:#fff;
+    padding:10px 0;
+  }
+
+  /* Show menu when clicked */
+  .nav-links.active{
+    display:flex;
+  }
+
+  .nav-links li{
+    padding:10px 0;
+  }
+}
+@media (max-width:768px){
+
+  .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .menu-toggle{
+    display:block !important;
+    font-size:30px;
+    cursor:pointer;
+  }
+
+  .nav-links{
+    display:none !important;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    background:#fff;
+    margin-top:10px;
+    padding:10px 0;
+  }
+
+  .nav-links.active{
+    display:flex !important;
+  }
+
+  .nav-links li{
+    padding:10px 0;
+  }
+}
+@media (max-width:768px){
+
+  /* Review Section */
+  .review{
+    padding:40px 15px;
+  }
+
+  .title1 h1{
+    font-size:32px;
+  }
+
+  .title1 p{
+    font-size:18px;
+  }
+
+  /* Cards */
+  .review-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+
+  .card1{
+    width:100%;
+    max-width:350px;
+    text-align:center;
+    padding:15px;
+  }
+
+  .card1 p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* Profile */
+  .profile{
+    justify-content:center;
+  }
+
+  .profile img{
+    width:50px;
+    height:50px;
+  }
+
+  .profile h3{
+    font-size:16px;
+  }
+}
+/* ==========================
+   MOBILE RESPONSIVE NAVBAR
+========================== */
+.menu-toggle{
+    display:none;
+}
+
+@media screen and (max-width:768px){
+
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:15px;
+        gap:10px;
+    }
+
+    /* Logo Left Side */
+    .sub{
+        display:flex;
+        align-items:center;
+        gap:10px;
+    }
+
+    .sub img{
+        width:40px;
+        height:40px;
+        position:static;
+    }
+
+    .sub h2{
+        font-size:22px;
+    }
+
+    .sub h3{
+        display:none;
+    }
+
+    /* Hamburger Right Side */
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    /* Hidden Menu */
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        text-align:center;
+        gap:15px;
+        margin-top:15px;
+        padding:15px 0;
+        background:#fff;
+    }
+
+    /* Show Menu After Click */
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+        padding:10px 0;
+    }
+
+    .nav-links li a{
+        display:block;
+        font-size:16px;
+    }
+
+    /* About Section */
+    .about-section{
+        flex-direction:column;
+        padding:30px 20px;
+        gap:30px;
+    }
+
+    .about-content{
+        text-align:center;
+    }
+
+    .about-content h2{
+        font-size:28px;
+    }
+
+    .main-img{
+        width:100%;
+        max-width:100%;
+
+    }
+
+    .sub-img{
+        position:static;
+        width:150px;
+        margin-top:15px;
+        position: absolute;
+
+        
+    }
+
+    .badge{
+        position:absolute;
+        
+        display:inline-block;
+        margin-bottom:15px;
+    }
+
+    .feature-item{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .btn-primary{
+        width:100%;
+        text-align:center;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width:480px){
+
+    .navbar{
+        padding:10px;
+    }
+
+    .sub h2{
+        font-size:18px;
+    }
+
+    .about-content h2{
+        font-size:24px;
+    }
+
+    .description{
+        font-size:14px;
+    }
+
+    .btn-primary{
+        padding:12px 20px;
+    }
+}
+/* Mobile */
+@media screen and (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        display:none !important;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    .nav-links.active{
+        display:flex !important;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+    }
+}
+.footer{
+    background:darkred;
+    color:darkgoldenrod;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+    
+}
+
+.footer-content h2{
+    color:orangered;
+    margin-bottom:10px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:orangered;
+}
+
+.copy{
+    margin-top:20px;
+    font-size:14px;
+    color:darkgoldenrod;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.para1{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+}
+.para2{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+.para3{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+           <nav class="navbar">
+
+    <div class="sub">
+        <img src="fork-and-spoon.png" alt="">
+        <h2>SARAB</h2>
+        <h3>fast food & restaurant</h3>
+    </div>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="reservation.html">RESERVATION</a></li>
+        <li><a href="chef.html">CHEF</a></li>
+        <li><a href="review.html">REVIEW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+</nav>
+   <hr>
+    <section class="review">
+
+    <div class="title1">
+        <p>What People Say</p>
+        <h1>Our Customers <span>Feedback</span></h1>
+    </div>
+
+    <div class="review-box">
+
+        <div class="card1">
+            <div class="star">★★★★★</div>
+
+            <p>
+                Honestly the best burgers I've ever had Reserve your table for a memorable dining experience. We recommend booking...
+            </p>
+
+            <div class="profile">
+                <img src="rev3.jpg" alt="">
+                <h3>Monica Wilber</h3>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="star">★★★★★</div>
+
+            <p>
+                Ordered delivery and the food arrived hot Reserve your table for a memorable dining experience. We recommend booking...
+            </p>
+
+            <div class="profile">
+              <img src="rev2.jpg" alt="">
+                <h3>Cameron Fox</h3>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="star">★★★★★</div>
+
+            <p>
+                The truffle pasta blew my mind Reserve your table for a memorable dining experience. We recommend booking...
+            </p>
+
+            <div class="profile">
+               <img src="rev1.jpg" alt="">
+                <h3>Priya Sharma</h3>
+            </div>
+        </div>
+
+    </div>
+
+  </section>
+    
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+</script>
+<footer class="footer">
+    <div class="footer-content">
+        <h2>SARAB</h2>
+        <p>Fast Food & Restaurant</p>
+
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html"> Reservation</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="para1">📍 New York, USA</p>
+        <p class="para2">📞 +1 234 567 890</p>
+        <p class="para3">✉️ info@sarab.com</p>
+
+        <p class="copy">
+            © 2026 SARAB Restaurant. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+    
+</body>
+</html>

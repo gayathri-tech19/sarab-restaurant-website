@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           *{ 
+   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+  .navbar{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+            padding: 20px 60px;
+        }
+        .nav-links{
+         display: flex;
+        gap: 30px;
+        list-style: none;
+        }
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .navbar  ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn{
+            background-color: orangered;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius:5px;
+    
+        }
+         .sab-h2{
+            color: red;
+            font-weight: bold;
+        
+        }
+        .sab h3{
+            color: #2b3952;
+            font-weight: bold;
+        }
+        .sub img{
+            height: 50px;
+            width: 20px;
+            position: absolute;
+            left: 10px;
+        }
+       
+
+        nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.order-btn {
+  background-color: #be2e3a;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+    .touch{
+  text-align: center;
+ padding-top: 30px;
+}
+
+.toch h1{
+  color: black;
+}
+.touch span{
+  color: orangered;
+}
+.touch p{
+  color: gray;
+  padding-top: 5px;
+  font-weight: bold;
+}
+.booking{
+    display:flex;
+    gap:40px;
+    padding:80px;
+}
+
+.contact3{
+    width:35%;
+    background:black;
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    font-weight: bold;
+}
+
+.reserve{
+    width:65%;
+}
+
+form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+input,
+select,
+textarea{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    grid-column:1/3;
+    height:120px;
+}
+
+button{
+    grid-column:1/3;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:orangered;
+    color:white;
+}
+    .details{
+      margin-top:20px;
+    }  
+    .details p{
+      margin-top: 5px;
+      color: #ddd;
+      padding-left:30px;
+      padding-bottom: 20px;
+      font-size: small;
+      
+    }    
+    .talk{
+      background-color: black;
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }  
+    .details h2{
+      padding-bottom: 10px;
+      font-size: small;
+      font-weight: bold;
+      color: gray;
+    }
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media screen and (max-width:992px){
+
+    .navbar{
+        padding:20px 30px;
+    }
+
+    .booking{
+        flex-direction:column;
+        padding:40px;
+    }
+
+    .talk,
+    .reserve{
+        width:100%;
+    }
+
+    .touch p{
+        padding:0 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media screen and (max-width:768px){
+
+    .navbar{
+        flex-wrap:wrap;
+        padding:20px;
+    }
+
+    .menu-toggle{
+        display:block;
+        margin-left:auto;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        text-align:center;
+        margin-top:20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        padding:10px 0;
+    }
+
+    .sub{
+        width:auto;
+    }
+
+    .sub img{
+        position:static;
+        width:40px;
+        height:40px;
+        margin-bottom:10px;
+    }
+
+    .booking{
+        flex-direction:column;
+        padding:20px;
+        gap:20px;
+    }
+
+    .talk,
+    .reserve{
+        width:100%;
+    }
+
+    form{
+        grid-template-columns:1fr;
+    }
+
+    textarea{
+        grid-column:auto;
+    }
+
+    button{
+        grid-column:auto;
+    }
+
+    .touch h1{
+        font-size:30px;
+    }
+
+    .touch p{
+        font-size:14px;
+        padding:0 10px;
+    }
+
+    .details p{
+        padding-left:0;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media screen and (max-width:480px){
+
+    .navbar{
+        padding:15px;
+    }
+
+    .touch h1{
+        font-size:24px;
+    }
+
+    .touch p{
+        font-size:13px;
+    }
+
+    .sub h2{
+        font-size:20px;
+    }
+
+    .sub h3{
+        font-size:12px;
+    }
+
+    input,
+    select,
+    textarea{
+        padding:12px;
+    }
+
+    button{
+        padding:12px;
+    }
+
+    .booking{
+        padding:15px;
+    }
+}
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
+@media (max-width: 768px){
+
+  /* Navbar */
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .sub{
+    display: flex;
+    align-items:start;
+    gap: 10px;
+    
+  }
+
+  .sub img{
+    width: 40px;
+    height: 40px;
+    position: static;
+  }
+
+  .sub h2{
+    font-size: 20px;
+  }
+
+  .sub h3{
+    display: none;
+  }
+
+  .menu-toggle{
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+   text-align: end;
+  }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }   
+}
+.menu-toggle{
+    display:none;
+}
+
+/* Mobile */
+@media screen and (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        display:none !important;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    .nav-links.active{
+        display:flex !important;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+    }
+}
+.footer{
+    background:darkred;
+    color:darkgoldenrod;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+    
+}
+
+.footer-content h2{
+    color:orangered;
+    margin-bottom:10px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:orangered;
+}
+
+.copy{
+    margin-top:20px;
+    font-size:14px;
+    color:darkgoldenrod;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.para1{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+}
+.para2{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+.para3{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+         <nav class="navbar">
+
+    <div class="sub">
+        <img src="fork-and-spoon.png" alt="">
+        <h2>SARAB</h2>
+        <h3>fast food & restaurant</h3>
+    </div>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="reservation.html">RESERVATION</a></li>
+        <li><a href="chef.html">CHEF</a></li>
+        <li><a href="review.html">REVIEW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+</nav>
+   <hr>
+    <section class="touch1">
+<div class="touch">
+  <h1>Get In Touch<span>Us</span></h1>
+  <p>Have a question, feedback, or want to plan a special event? We'd love to hear from you.</p><br>
+</div>
+</section>
+   <section class="booking">
+<div class="talk">
+  <h2> lets talk</h2>
+  <p> We typically respond within 2 hours during business hours.</p>
+
+    <div class="details">
+      <h2> 📌Address</h2>
+      <p>42 Flavor Street, Manhattan,<br>
+       New York, NY 10001</p>
+    
+  
+      <h2>📞Phone</h2>
+      <p>+1 (800) 123-456</p>
+    
+    
+      <h2>✉️Email</h2>
+      <p>hello@sarabfood.com</p>
+    
+    
+      <h2>🕒Working Hours</h2>
+      <p>Wed - Sun: 9 AM - 11 PM</p>
+    </div>
+    </div>
+
+    <div class="reserve">
+
+        <form>
+            <input type="text" placeholder="John Doe">
+            <input type="tel" placeholder="Phone Number">
+
+            <input type="email" placeholder="Email">
+            <select>
+                <option>1 Person</option>
+            </select>
+
+            <input type="date">
+            <input type="time">
+
+            <textarea placeholder="Special Requests"></textarea>
+
+            <button>Confirm Reservation</button>
+        </form>
+
+    </div>
+
+</section> 
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+</script>
+<footer class="footer">
+    <div class="footer-content">
+        <h2>SARAB</h2>
+        <p>Fast Food & Restaurant</p>
+
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html"> Reservation</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="para1">📍 New York, USA</p>
+        <p class="para2">📞 +1 234 567 890</p>
+        <p class="para3">✉️ info@sarab.com</p>
+
+        <p class="copy">
+            © 2026 SARAB Restaurant. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

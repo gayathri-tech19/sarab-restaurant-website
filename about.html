@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+  .navbar{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+            padding: 20px 60px;
+        }
+        .nav-links{
+         display: flex;
+        gap: 30px;
+        list-style: none;
+        }
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .navbar  ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn{
+            background-color: orangered;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius:5px;
+    
+        }
+         .sab-h2{
+            color: red;
+            font-weight: bold;
+        
+        }
+        .sab h3{
+            color: #2b3952;
+            font-weight: bold;
+        }
+        .sub img{
+            height: 50px;
+            width: 20px;
+            position: absolute;
+            left: 10px;
+        }
+
+      nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.order-btn {
+  background-color: #be2e3a;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+      nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.order-btn {
+  background-color: #be2e3a;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+        /* Layout Container */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 8%;
+  background-color: #fdfdfd;
+}
+
+/* Image Section Styling */
+.about-image-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.main-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.sub-img{
+  position: absolute;
+  bottom:10px;
+  right: -20px;
+  padding: 15px 20px;
+
+}
+/* Floating Red Badge */
+.badge {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+}
+
+/* Content Styling */
+.about-content {
+  flex: 1;
+}
+
+.sub-title {
+  font-family: 'Sacramento', cursive; /* Use google font */
+  font-size: 28px;
+  color: #e74c3c;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.about-content h2 span {
+  color: #e74c3c;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Feature Item Flexbox */
+.feature-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.feature-item .icon {
+  background-color: #fbeee6;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.feature-item h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.feature-item p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Red Primary Button */
+.btn-primary {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+}
+/* ==========================
+   MOBILE RESPONSIVE NAVBAR
+========================== */
+.menu-toggle{
+    display:none;
+}
+
+@media screen and (max-width:768px){
+
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:15px;
+        gap:10px;
+    }
+
+    /* Logo Left Side */
+    .sub{
+        display:flex;
+        align-items:center;
+        gap:10px;
+    }
+
+    .sub img{
+        width:40px;
+        height:40px;
+        position:static;
+    }
+
+    .sub h2{
+        font-size:22px;
+    }
+
+    .sub h3{
+        display:none;
+    }
+
+    /* Hamburger Right Side */
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    /* Hidden Menu */
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        text-align:center;
+        gap:15px;
+        margin-top:15px;
+        padding:15px 0;
+        background:#fff;
+    }
+
+    /* Show Menu After Click */
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+        padding:10px 0;
+    }
+
+    .nav-links li a{
+        display:block;
+        font-size:16px;
+    }
+
+    /* About Section */
+    .about-section{
+        flex-direction:column;
+        padding:30px 20px;
+        gap:30px;
+    }
+
+    .about-content{
+        text-align:center;
+    }
+
+    .about-content h2{
+        font-size:28px;
+    }
+
+    .main-img{
+        width:100%;
+        max-width:100%;
+
+    }
+
+    .sub-img{
+        position:static;
+        width:150px;
+        margin-top:15px;
+        position: absolute;
+
+        
+    }
+
+    .badge{
+        position:absolute;
+        
+        display:inline-block;
+        margin-bottom:15px;
+    }
+
+    .feature-item{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .btn-primary{
+        width:100%;
+        text-align:center;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width:480px){
+
+    .navbar{
+        padding:10px;
+    }
+
+    .sub h2{
+        font-size:18px;
+    }
+
+    .about-content h2{
+        font-size:24px;
+    }
+
+    .description{
+        font-size:14px;
+    }
+
+    .btn-primary{
+        padding:12px 20px;
+    }
+}
+/* Mobile */
+@media screen and (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        display:none !important;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    .nav-links.active{
+        display:flex !important;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width:768px){
+
+    .footer-links{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .footer-content h2{
+        font-size:26px;
+    }
+
+    .footer-contact{
+        text-align:center;
+    }
+}
+.footer{
+    background:darkred;
+    color:darkgoldenrod;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+    
+}
+
+.footer-content h2{
+    color:orangered;
+    margin-bottom:10px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:orangered;
+}
+
+.copy{
+    margin-top:20px;
+    font-size:14px;
+    color:darkgoldenrod;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.para1{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+}
+.para2{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+.para3{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+
+
+
+    </style>
+</head>
+<body>
+         <nav class="navbar">
+
+    <div class="sub">
+        <img src="fork-and-spoon.png" alt="">
+        <h2>SARAB</h2>
+        <h3>fast food & restaurant</h3>
+    </div>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="reservation.html">RESERVATION</a></li>
+        <li><a href="review.html">REVIEW</a></li>
+        <li><a href="chef.html">CHEF</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+</nav>
+   <hr>
+    <section class="about-section">
+  <div class="about-image-wrapper">
+    <div class="badge">12+ <br><span>years of Experience </span></div>
+    <img src="about1.jpg" alt="" class="main-img ">
+    <img src="about2.jpg" alt="" class="sub-img"> 
+  </div>
+  <div class="about-content">
+    <span class="sub-title"> our story</span>
+    <h2> we invited you to visit <br><span>food restaurant</span></h2>
+    <p class="description">
+      founded in 2012,sarab began as a small corner joint with a big dream as  - to serve food that brings people together. Today we're proud to serve thousands of happy customers every week with the same passion that started it all.
+    </p>
+    <div class="feture-list">
+      <div class="feature-item">
+        <div class="icon">🌱</div>
+        <div class="feature-item-content">
+      <h4> 100% fresh ingredients</h4>
+      <p>We source locally and sustainably. Every ingredient is hand-picked daily for maximum freshness.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🏆</div>
+        <div>
+          <h4>Award-Winning Recipes</h4>
+          <p>Our signature recipes have won national culinary awards 5 years in a row.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn-primary">📖 view full menu</a> 
+  </div>
+    </section>
+  <script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+</script>
+
+<footer class="footer">
+    <div class="footer-content">
+        <h2>SARAB</h2>
+        <p>Fast Food & Restaurant</p>
+
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html"> Reservation</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="para1">📍 New York, USA</p>
+        <p class="para2">📞 +1 234 567 890</p>
+        <p class="para3">✉️ info@sarab.com</p>
+
+        <p class="copy">
+            © 2026 SARAB Restaurant. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+  
+    
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+        width: 100%;
+        min-height:100vh ;
+    }
+    .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:black;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+          /*reset & base fonts*/
+*{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+  .navbar{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+            padding: 20px 60px;
+        }
+        .nav-links{
+         display: flex;
+        gap: 30px;
+        list-style: none;
+        }
+        .navbar ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .navbar  ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn{
+            background-color: orangered;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius:5px;
+    
+        }
+         .sab-h2{
+            color: red;
+            font-weight: bold;
+        
+        }
+        .sab h3{
+            color: #2b3952;
+            font-weight: bold;
+        }
+        .sub img{
+            height: 50px;
+            width: 20px;
+            position: absolute;
+            left: 10px;
+        }
+
+.logo-text{
+    display: flex;
+    flex-direction: column;
+}
+.logo-text h1{
+    margin: 0;
+}
+.logo-text p{
+    margin: 0;
+}
+.logo-text img{
+    width: 150px;
+    height: 150px;
+
+}
+
+body {
+  background-color: #eae9e5;
+}
+
+/* NAVBAR FIX */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b3952;
+}
+
+    .hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px 80px;
+}
+
+.hero-text{
+    width:50%;
+}
+.hero-text h2{
+    color: #2b3952;
+    font-size: medium;
+    padding-bottom: 10px;
+}
+
+.hero-text h1{
+    font-size:70px;
+    font-weight: bold;
+}
+.hero-text h1 span{
+  color: orangered;
+}
+.hero-text p{
+  color: gray;
+  font-weight: bold;
+  font-size: small;
+}
+.hero-text button{
+  color: white;
+  background-color: orangered;
+  border-radius: 20px;
+  display: flex;
+}
+.hero-text-button-men{
+  display: flex;
+  gap: 50px;
+
+}
+.ball button{
+    background: orangered;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    padding-inline:15px ;
+    padding-block: 15px;
+}
+.ball{
+  display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    
+}
+.ball button:hover{
+    background: #d63c00;
+    transform: translateY(-3px);
+}
+
+.hero-image{
+    position:relative;
+   
+}
+
+.hero-image img{
+    width:450px;
+     border-radius: 50%;
+}
+
+.card{
+    position:absolute;
+    background:white;
+    padding:15px 20px;
+    border-radius:10px;
+}
+
+.card1{
+    top:20px;
+    left: -0.10px;
+}
+
+.card2{
+    top:150px;
+    right:-40px;
+}
+
+.card3{
+    bottom:20px;
+    right: -0.5px;
+}
+.category{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:50px;
+}
+
+.box{
+    width:160px;
+    height:180px;
+    text-align:center;
+    border:1px solid #eee;
+    border-radius:20px;
+    padding:20px;
+}
+
+.box img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.box h3{
+    margin-top:15px;
+}
+
+.box p{
+    color:gray;
+    font-size:14px;
+}
+
+.shop {
+display: flex;
+color: white;
+font-size: medium;
+font-weight: bold;
+gap: 50px;
+padding-top: 20px;
+padding-bottom: 20px;
+border-radius: 20px;
+text-align: start;
+}
+.mark{
+    background-color: orangered;
+    gap: 80px;
+}
+.cat{
+  text-align: center;
+  padding-top: 10px;
+}
+.cat h1{
+  color: red;
+  padding-top: 10px;
+}
+.cat p{
+  padding-top: 10px;
+  color: #666;
+}
+.cat span h2{
+  color: orangered;
+}
+.hero-image img{
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+.card1{
+    animation: float 3s infinite ease-in-out ;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+.card2{
+    animation: float 3s infinite ease-in-out ;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+.card3{
+    animation: float 3s infinite ease-in-out ;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+.card1{
+    background-color:red;
+    color: white;
+    font-size: medium;
+}
+.card2{
+    background-color: red;
+    color: white;
+    font-size: medium;
+}
+.card3{
+    background-color:red;
+    color: white;
+    font-size: medium;
+}
+/* ======================
+   TABLET RESPONSIVE
+====================== */
+@media (max-width: 992px){
+
+  .hero{
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text,
+  .hero-image{
+    width: 100%;
+  }
+
+  .hero-image img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .category{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box{
+    width: 45%;
+  }
+}
+
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
+@media (max-width: 768px){
+
+  /* Navbar */
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .sub{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sub img{
+    width: 40px;
+    height: 40px;
+    position: static;
+  }
+
+  .sub h2{
+    font-size: 20px;
+  }
+
+  .sub h3{
+    display: none;
+  }
+
+  .menu-toggle{
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+
+  /* Hero Section */
+  .hero{
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-text{
+    width: 100%;
+  }
+
+  .hero-text h1{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .hero-text p{
+    font-size: 14px;
+  }
+
+  .ball{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* Hero Image */
+  .hero-image{
+    margin-top: 20px;
+  }
+
+  .hero-image img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  /* Floating Cards */
+  .card{
+    position: static;
+    display: inline-block;
+    margin: 8px;
+    margin-top: 20px;
+    
+  }
+  .card1{
+    position: absolute;
+
+  }
+  .card2{
+    position:absolute;
+    right: 60px;
+  }
+  .card3{
+    position: absolute;
+    right:300px;
+    bottom: 20px;
+  }
+
+  /* Category */
+  .category{
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .box{
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .cat h2{
+    font-size: 28px;
+  }
+
+  /* Marquee */
+  .shop{
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+@media (max-width:768px){
+
+  .navbar ul.nav-links{
+    display:none;
+  }
+
+  .navbar ul.nav-links.active{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+
+}
+@media (max-width:768px){
+
+  .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .menu-toggle{
+    display:block !important;
+    font-size:30px;
+    cursor:pointer;
+  }
+
+  .nav-links{
+    display:none !important;
+    width:100%;
+    flex-direction:column;
+    text-align:center;
+    background:#fff;
+    margin-top:10px;
+    padding:10px 0;
+  }
+
+  .nav-links.active{
+    display:flex !important;
+  }
+
+  .nav-links li{
+    padding:10px 0;
+  }
+}
+.footer{
+    background:darkred;
+    color:darkgoldenrod;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+    
+}
+
+.footer-content h2{
+    color:orangered;
+    margin-bottom:10px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:orangered;
+}
+
+.copy{
+    margin-top:20px;
+    font-size:14px;
+    color:darkgoldenrod;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.para1{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+}
+.para2{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+.para3{
+  text-align: start;
+  font-weight: bold;
+  color:darkturquoise;
+  margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+      
+     <nav class="navbar">
+
+    <div class="sub">
+        <img src="fork-and-spoon.png" alt="">
+        <h2>SARAB</h2>
+        <h3>fast food & restaurant</h3>
+    </div>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="reservation.html">RESERVATION</a></li>
+        <li><a href="chef.html">CHEF</a></li>
+        <li><a href="review.html">REVIEW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+</nav>
+   <hr>
+  <section class="hero">
+
+    <div class="hero-text">
+      <h2> ⭐#1 Rated Fast Food Restaurant in New Yorkbr</h2>
+        <h1>
+            Fast Food <br>
+           <span>for Every</span>  <br>
+            Moment
+        </h1>
+
+        <p>
+            Experience bold flavors crafted from premium <br>
+            From crispy burgers to gourmet pizzas - every bite <br>
+             is an adventure worth savoring.
+        </p>
+<div class="ball">
+    <button>🍴 View Menu</button>
+<button>▶ Watch Story</button>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="banner-img.jpg" alt="burger">
+
+        <div class="card card1">Hot Deal</div>
+
+        <div class="card card2">20 min</div>
+
+        <div class="card card3">4.9/5</div>
+
+    </div>
+</section>
+<section class="mark">
+  <marquee behavior="right" direction="">
+     <ul class="shop">
+      <li> burger</li>
+      <li> pizza</li>
+      <li> candy</li>
+      <li> chicken</li>
+      <li> grill chicken</li>
+      <li> icecream </li>
+      <li>cool drinks</li>
+      <li> burger</li>
+      <li> pizza</li>
+      <li> candy</li>
+      <li> chicken</li>
+      <li> grill chicken</li>
+    </ul>
+
+  </marquee>
+</section>
+<div class="cat">
+    <h1>What We Offer</h1> <br>
+    <h2>Browse <span>by</span> Category</h2> <br>
+    <p>From sizzling burgers to exotic world cuisines - <br>
+       find your favourite in our menu</p>
+  </div>
+<section class="category">
+  
+
+    <div class="box">
+        <img src="img2.jpg">
+        <h3>All Items</h3>
+        <p>99 Items</p>
+    </div>
+
+    <div class="box">
+        <img src="img3.jpg">
+        <h3>Burgers</h3>
+        <p>24 Items</p>
+    </div>
+
+    <div class="box">
+        <img src="img5.jpg">
+        <h3>Pizza</h3>
+        <p>18 Items</p>
+    </div>
+
+    <div class="box">
+        <img src="img4.jpg">
+        <h3>Fried Chicken</h3>
+        <p>15 Items</p>
+    </div>
+
+    <div class="box">
+        <img src="img4.jpg">
+        <h3>Wraps</h3>
+        <p>12 Items</p>
+    </div>
+
+    <div class="box">
+        <img src="img7.jpg">
+        <h3>Desserts</h3>
+        <p>20 Items</p>
+    </div>
+
+</section>
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+</script>
+  <footer class="footer">
+    <div class="footer-content">
+        <h2>SARAB</h2>
+        <p>Fast Food & Restaurant</p>
+
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html"> Reservation</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="para1">📍 New York, USA</p>
+        <p class="para2">📞 +1 234 567 890</p>
+        <p class="para3">✉️ info@sarab.com</p>
+
+        <p class="copy">
+            © 2026 SARAB Restaurant. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
