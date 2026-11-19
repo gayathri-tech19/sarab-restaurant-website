@@ -1,553 +1,663 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Us | SARAB Restaurant</title>
+
+
+    
     <style>
-       *{ 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-  .navbar{
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #fffaf5;
+            color: #252525;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
             display: flex;
             align-items: center;
-            gap: 40px;
             justify-content: space-between;
-            padding: 20px 60px;
+            padding: 18px 7%;
+            background-color: #ffffff;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .nav-links{
-         display: flex;
-        gap: 30px;
-        list-style: none;
-        }
-        .navbar ul{
+
+        .logo {
             display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-family: 'Playfair Display', serif;
+            color: orangered;
+            font-size: 27px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
             list-style: none;
-            gap: 20px;
         }
-        .navbar  ul li a{
+
+        .nav-links a {
             text-decoration: none;
-            color: black;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .btn{
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color:orangered;
+        }
+
+        .nav-links .order-btn {
             background-color: orangered;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius:5px;
-    
+            color: white;
+            padding: 12px 22px;
+            border-radius: 5px;
         }
-         .sab-h2{
-            color: red;
-            font-weight: bold;
-        
+
+        .nav-links .order-btn:hover {
+            background-color: orangered;
+            color: white;
         }
-        .sab h3{
-            color: #2b3952;
-            font-weight: bold;
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: orangered;
         }
-        .sub img{
-            height: 50px;
-            width: 20px;
+
+       
+
+        .page-heading {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .page-heading p {
+            color: orangered;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .page-heading h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            margin-top: 12px;
+            color: #252525;
+        }
+
+        .page-heading h1 span {
+            color: orangered;
+        }
+
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            padding: 40px 9% 90px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .about-image-wrapper {
+            flex: 1;
+            position: relative;
+            padding: 15px;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 470px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .sub-img {
             position: absolute;
-            left: 10px;
+            width: 190px;
+            height: 160px;
+            object-fit: cover;
+            border: 8px solid #fffaf5;
+            border-radius: 12px;
+            bottom: -35px;
+            right: -20px;
         }
 
-      nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
+        .badge {
+            position: absolute;
+            top: 35px;
+            left: -5px;
+            background-color: orangered;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(181, 45, 54, 0.25);
+        }
 
-nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  font-size: 14px;
-}
+        .badge h2 {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+        }
 
-.order-btn {
-  background-color: #be2e3a;
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-      nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
+        .badge p {
+            font-size: 12px;
+            margin-top: 3px;
+        }
 
-nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  font-size: 14px;
-}
+       
 
-.order-btn {
-  background-color: #be2e3a;
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-        /* Layout Container */
-.about-section {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  padding: 60px 8%;
-  background-color: #fdfdfd;
-}
+        .about-content {
+            flex: 1;
+        }
 
-/* Image Section Styling */
-.about-image-wrapper {
-  position: relative;
-  flex: 1;
-}
+        .sub-title {
+            color:orangered;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-.main-img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-.sub-img{
-  position: absolute;
-  bottom:10px;
-  right: -20px;
-  padding: 15px 20px;
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            line-height: 1.25;
+            margin: 15px 0 20px;
+            color: #252525;
+        }
 
-}
-/* Floating Red Badge */
-.badge {
-  position: absolute;
-  top: 20px;
-  left: -20px;
-  background-color: #e74c3c;
-  color: #fff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
-}
+        .about-content h2 span {
+            color:orangered;
+        }
 
-/* Content Styling */
-.about-content {
-  flex: 1;
-}
+        .description {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
 
-.sub-title {
-  font-family: 'Sacramento', cursive; /* Use google font */
-  font-size: 28px;
-  color: #e74c3c;
-}
+       
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 22px;
+            padding: 17px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #f1e8e2;
+            transition: 0.3s;
+        }
 
-.about-content h2 {
-  font-size: 36px;
-  color: #2c3e50;
-  margin: 10px 0;
-}
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+        }
 
-.about-content h2 span {
-  color: #e74c3c;
-}
+        .feature-item .icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff0e8;
+            border-radius: 50%;
+            font-size: 23px;
+        }
 
-.description {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
+        .feature-item h4 {
+            font-size: 16px;
+            margin-bottom: 7px;
+            color: #292929;
+        }
 
-/* Feature Item Flexbox */
-.feature-item {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
+        .feature-item p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #777;
+        }
 
-.feature-item .icon {
-  background-color: #fbeee6;
-  padding: 10px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-}
 
-.feature-item h4 {
-  margin: 0 0 5px 0;
-  color: #333;
-}
+        .btn-primary {
+            display: inline-block;
+            background-color:orangered;
+            color: white;
+            padding: 14px 28px;
+            margin-top: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
 
-.feature-item p {
-  margin: 0;
-  color: #777;
-  font-size: 14px;
-}
-
-/* Red Primary Button */
-.btn-primary {
-  display: inline-block;
-  background-color: #e74c3c;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #c0392b;
-}
-/* ==========================
-   MOBILE RESPONSIVE NAVBAR
-========================== */
-.menu-toggle{
-    display:none;
-}
-
-@media screen and (max-width:768px){
-
-    .navbar{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        flex-wrap:wrap;
-        padding:15px;
-        gap:10px;
-    }
-
-    /* Logo Left Side */
-    .sub{
-        display:flex;
-        align-items:center;
-        gap:10px;
-    }
-
-    .sub img{
-        width:40px;
-        height:40px;
-        position:static;
-    }
-
-    .sub h2{
-        font-size:22px;
-    }
-
-    .sub h3{
-        display:none;
-    }
-
-    /* Hamburger Right Side */
-    .menu-toggle{
-        display:block;
-        font-size:30px;
-        cursor:pointer;
-        margin-left:auto;
-    }
-
-    /* Hidden Menu */
-    .nav-links{
-        display:none;
-        flex-direction:column;
-        width:100%;
-        text-align:center;
-        gap:15px;
-        margin-top:15px;
-        padding:15px 0;
-        background:#fff;
-    }
-
-    /* Show Menu After Click */
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links li{
-        width:100%;
-        padding:10px 0;
-    }
-
-    .nav-links li a{
-        display:block;
-        font-size:16px;
-    }
-
-    /* About Section */
-    .about-section{
-        flex-direction:column;
-        padding:30px 20px;
-        gap:30px;
-    }
-
-    .about-content{
-        text-align:center;
-    }
-
-    .about-content h2{
-        font-size:28px;
-    }
-
-    .main-img{
-        width:100%;
-        max-width:100%;
-
-    }
-
-    .sub-img{
-        position:static;
-        width:150px;
-        margin-top:15px;
-        position: absolute;
+        .btn-primary:hover {
+            background-color: orangered;
+            transform: translateY(-3px);
+        }
 
         
-    }
 
-    .badge{
-        position:absolute;
-        
-        display:inline-block;
-        margin-bottom:15px;
-    }
+        .footer {
+            background-color: #211b1a;
+            color: white;
+            padding: 55px 8% 20px;
+            margin-top: 40px;
+        }
 
-    .feature-item{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-    }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
 
-    .btn-primary{
-        width:100%;
-        text-align:center;
-    }
-}
+        .footer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: orangered;
+            margin-bottom: 8px;
+        }
 
-/* Small Mobile */
-@media screen and (max-width:480px){
+        .footer-content > p {
+            color: #c5b9b5;
+            font-size: 14px;
+        }
 
-    .navbar{
-        padding:10px;
-    }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 28px 0;
+        }
 
-    .sub h2{
-        font-size:18px;
-    }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-    .about-content h2{
-        font-size:24px;
-    }
+        .footer-links a:hover {
+            color: #e64b51;
+        }
 
-    .description{
-        font-size:14px;
-    }
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+            color: #c5b9b5;
+            font-size: 13px;
+        }
 
-    .btn-primary{
-        padding:12px 20px;
-    }
-}
-/* Mobile */
-@media screen and (max-width:768px){
+        .copy {
+            border-top: 1px solid #493d3a;
+            padding-top: 20px;
+            margin-top: 30px;
+            color: #a99d99;
+            font-size: 12px;
+        }
 
-    .menu-toggle{
-        display:block;
-        font-size:30px;
-        cursor:pointer;
-    }
+   
 
-    .nav-links{
-        display:none !important;
-        width:100%;
-        flex-direction:column;
-        text-align:center;
-        margin-top:15px;
-    }
+        @media (max-width: 900px) {
 
-    .nav-links.active{
-        display:flex !important;
-    }
+            .navbar {
+                padding: 18px 4%;
+            }
 
-    .navbar{
-        flex-wrap:wrap;
-    }
-}
+            .nav-links {
+                gap: 15px;
+            }
 
-/* Mobile Responsive */
-@media screen and (max-width:768px){
+            .about-section {
+                gap: 35px;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
 
-    .footer-links{
-        flex-direction:column;
-        gap:12px;
-    }
+            .about-content h2 {
+                font-size: 34px;
+            }
 
-    .footer-content h2{
-        font-size:26px;
-    }
+            .main-img {
+                height: 400px;
+            }
+        }
 
-    .footer-contact{
-        text-align:center;
-    }
-}
-.footer{
-    background:darkred;
-    color:darkgoldenrod;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:50px;
     
-}
 
-.footer-content h2{
-    color:orangered;
-    margin-bottom:10px;
-}
+        @media (max-width: 768px) {
 
-.footer-links{
-    margin:20px 0;
-}
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 5%;
+            }
 
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-}
+            .menu-toggle {
+                display: block;
+            }
 
-.footer-links a:hover{
-    color:orangered;
-}
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 22px 0 10px;
+            }
 
-.copy{
-    margin-top:20px;
-    font-size:14px;
-    color:darkgoldenrod;
-    text-align: center;
-    font-weight: bold;
+            .nav-links.active {
+                display: flex;
+            }
 
-}
+            .page-heading {
+                padding: 45px 15px 20px;
+            }
 
-.para1{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-}
-.para2{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
-.para3{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
+            .page-heading h1 {
+                font-size: 34px;
+            }
 
+            .about-section {
+                flex-direction: column;
+                padding: 25px 7% 60px;
+                gap: 65px;
+            }
 
+            .about-image-wrapper {
+                width: 100%;
+            }
+
+            .main-img {
+                height: 350px;
+            }
+
+            .sub-img {
+                width: 145px;
+                height: 120px;
+                right: -5px;
+            }
+
+            .about-content {
+                text-align: center;
+            }
+
+            .about-content h2 {
+                font-size: 32px;
+            }
+
+            .feature-item {
+                text-align: left;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+       
+
+        @media (max-width: 480px) {
+
+            .logo h2 {
+                font-size: 23px;
+            }
+
+            .logo span {
+                font-size: 9px;
+            }
+
+            .page-heading h1 {
+                font-size: 29px;
+            }
+
+            .main-img {
+                height: 280px;
+            }
+
+            .badge {
+                padding: 12px 16px;
+            }
+
+            .badge h2 {
+                font-size: 25px;
+            }
+
+            .about-content h2 {
+                font-size: 27px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .feature-item {
+                padding: 13px;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
+        }
 
     </style>
 </head>
+
 <body>
-         <nav class="navbar">
 
-    <div class="sub">
-        <img src="fork-and-spoon.png" alt="">
-        <h2>SARAB</h2>
-        <h3>fast food & restaurant</h3>
-    </div>
+   
 
-    <div class="menu-toggle">&#9776;</div>
+    <nav class="navbar">
 
-    <ul class="nav-links">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="menu.html">MENU</a></li>
-        <li><a href="reservation.html">RESERVATION</a></li>
-        <li><a href="review.html">REVIEW</a></li>
-        <li><a href="chef.html">CHEF</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
+        <div class="logo">
+            <img src="fork-and-spoon.png" alt="SARAB Logo">
 
-</nav>
-   <hr>
-    <section class="about-section">
-  <div class="about-image-wrapper">
-    <div class="badge">12+ <br><span>years of Experience </span></div>
-    <img src="about1.jpg" alt="" class="main-img ">
-    <img src="about2.jpg" alt="" class="sub-img"> 
-  </div>
-  <div class="about-content">
-    <span class="sub-title"> our story</span>
-    <h2> we invited you to visit <br><span>food restaurant</span></h2>
-    <p class="description">
-      founded in 2012,sarab began as a small corner joint with a big dream as  - to serve food that brings people together. Today we're proud to serve thousands of happy customers every week with the same passion that started it all.
-    </p>
-    <div class="feture-list">
-      <div class="feature-item">
-        <div class="icon">🌱</div>
-        <div class="feature-item-content">
-      <h4> 100% fresh ingredients</h4>
-      <p>We source locally and sustainably. Every ingredient is hand-picked daily for maximum freshness.</p>
+            <div>
+                <h2>SARAB</h2>
+                <span>FAST FOOD & RESTAURANT</span>
+            </div>
         </div>
-      </div>
-      <div class="feature-item">
-        <div class="icon">🏆</div>
-        <div>
-          <h4>Award-Winning Recipes</h4>
-          <p>Our signature recipes have won national culinary awards 5 years in a row.</p>
-        </div>
-      </div>
-    </div>
-    <a href="#" class="btn-primary">📖 view full menu</a> 
-  </div>
+
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="reservation.html">RESERVATION</a></li>
+            <li><a href="review.html">REVIEW</a></li>
+            <li><a href="chef.html">CHEF</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+    </nav>
+
+   
+
+    <section class="page-heading">
+
+        <p>Discover Our Story</p>
+
+        <h1>About <span>SARAB</span></h1>
+
     </section>
-  <script>
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-</script>
+   
 
-<footer class="footer">
-    <div class="footer-content">
-        <h2>SARAB</h2>
-        <p>Fast Food & Restaurant</p>
+    <section class="about-section">
 
-        <div class="footer-links">
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="menu.html">Menu</a>
-            <a href="reservation.html"> Reservation</a>
-            <a href="review.html">Review</a>
-            <a href="contact.html">Contact</a>
+        <div class="about-image-wrapper">
+
+            <div class="badge">
+                <h2>12+</h2>
+                <p>Years of Experience</p>
+            </div>
+
+            <img src="about1.jpg" alt="SARAB Restaurant Food" class="main-img">
+
+            <img src="about2.jpg" alt="Delicious Restaurant Food" class="sub-img">
 
         </div>
 
-        <p class="para1">📍 New York, USA</p>
-        <p class="para2">📞 +1 234 567 890</p>
-        <p class="para3">✉️ info@sarab.com</p>
+        <div class="about-content">
 
-        <p class="copy">
-            © 2026 SARAB Restaurant. All Rights Reserved.
-        </p>
-    </div>
-</footer>
-  
-    
+            <span class="sub-title">Our Story</span>
+
+            <h2>
+                We Invite You To Visit
+                <span>Our Food Restaurant</span>
+            </h2>
+
+            <p class="description">
+                Founded in 2012, SARAB began as a small corner joint
+                with a big dream — to serve food that brings people
+                together. Today, we're proud to serve thousands of
+                happy customers every week with the same passion
+                that started it all.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature-item">
+
+                    <div class="icon">🌱</div>
+
+                    <div>
+                        <h4>100% Fresh Ingredients</h4>
+
+                        <p>
+                            We source locally and sustainably.
+                            Every ingredient is hand-picked daily
+                            for maximum freshness.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="icon">🏆</div>
+
+                    <div>
+                        <h4>Award-Winning Recipes</h4>
+
+                        <p>
+                            Our signature recipes bring together
+                            quality ingredients and delicious
+                            flavours for every customer.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="menu.html" class="btn-primary">
+                View Full Menu →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h2>SARAB</h2>
+
+            <p>Good Food. Good Mood. Great Memories.</p>
+
+            <div class="footer-links">
+
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <p>📍 New York, USA</p>
+                <p>📞 +1 234 567 890</p>
+                <p>✉️ info@sarab.com</p>
+
+            </div>
+
+            <p class="copy">
+                © 2026 SARAB Restaurant. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+    </script>
+
 </body>
+
 </html>
