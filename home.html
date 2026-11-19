@@ -1,783 +1,870 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="SARAB Fast Food & Restaurant">
+  <title>SARAB | Fast Food & Restaurant</title>
+
   <style>
-    .container{
-        width: 100%;
-        min-height:100vh ;
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+    :root {
+      --orange: #ed5b2a;
+      --orange-dark: #cf4318;
+      --ink: #25221f;
+      --muted: #77716b;
+      --cream: #fffaf5;
+      --white: #ffffff;
+      --line: #eee5dc;
+      --shadow: 0 18px 45px rgba(50, 35, 22, .09);
     }
-    .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-}
 
-.nav-links{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.nav-links a{
-    text-decoration:none;
-    color:black;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-          /*reset & base fonts*/
-*{ 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-  .navbar{
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            justify-content: space-between;
-            padding: 20px 60px;
-        }
-        .nav-links{
-         display: flex;
-        gap: 30px;
-        list-style: none;
-        }
-        .navbar ul{
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        .navbar  ul li a{
-            text-decoration: none;
-            color: black;
-        }
-        .btn{
-            background-color: orangered;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius:5px;
-    
-        }
-         .sab-h2{
-            color: red;
-            font-weight: bold;
-        
-        }
-        .sab h3{
-            color: #2b3952;
-            font-weight: bold;
-        }
-        .sub img{
-            height: 50px;
-            width: 20px;
-            position: absolute;
-            left: 10px;
-        }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-.logo-text{
-    display: flex;
-    flex-direction: column;
-}
-.logo-text h1{
-    margin: 0;
-}
-.logo-text p{
-    margin: 0;
-}
-.logo-text img{
-    width: 150px;
-    height: 150px;
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-}
+    button, a {
+      font: inherit;
+    }
 
-body {
-  background-color: #eae9e5;
-}
-
-/* NAVBAR FIX */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 6%;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #2b3952;
-}
-
-    .hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:50px 80px;
-}
-
-.hero-text{
-    width:50%;
-}
-.hero-text h2{
-    color: #2b3952;
-    font-size: medium;
-    padding-bottom: 10px;
-}
-
-.hero-text h1{
-    font-size:70px;
-    font-weight: bold;
-}
-.hero-text h1 span{
-  color: orangered;
-}
-.hero-text p{
-  color: gray;
-  font-weight: bold;
-  font-size: small;
-}
-.hero-text button{
-  color: white;
-  background-color: orangered;
-  border-radius: 20px;
-  display: flex;
-}
-.hero-text-button-men{
-  display: flex;
-  gap: 50px;
-
-}
-.ball button{
-    background: orangered;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    
-    padding-inline:15px ;
-    padding-block: 15px;
-}
-.ball{
-  display: flex;
-    gap: 40px;
-    margin-top: 40px;
-    
-}
-.ball button:hover{
-    background: #d63c00;
-    transform: translateY(-3px);
-}
-
-.hero-image{
-    position:relative;
    
-}
 
-.hero-image img{
-    width:450px;
-     border-radius: 50%;
-}
+    .navbar {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 7%;
+      background: rgba(255, 250, 245, .96);
+    }
 
-.card{
-    position:absolute;
-    background:white;
-    padding:15px 20px;
-    border-radius:10px;
-}
+    .sub {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
 
-.card1{
-    top:20px;
-    left: -0.10px;
-}
+    .sub img {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+    }
 
-.card2{
-    top:150px;
-    right:-40px;
-}
+    .brand-copy h2 {
+      color: var(--orange);
+      font-size: 25px;
+      line-height: 1.1;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
 
-.card3{
-    bottom:20px;
-    right: -0.5px;
-}
-.category{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:50px;
-}
+    .brand-copy h3 {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+    }
 
-.box{
-    width:160px;
-    height:180px;
-    text-align:center;
-    border:1px solid #eee;
-    border-radius:20px;
-    padding:20px;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
 
-.box img{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    object-fit:cover;
-}
+    .nav-links a {
+      color: #403a35;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .55px;
+      transition: color .2s ease;
+    }
 
-.box h3{
-    margin-top:15px;
-}
+    .nav-links a:hover {
+      color: var(--orange);
+    }
 
-.box p{
-    color:gray;
-    font-size:14px;
-}
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-.shop {
-display: flex;
-color: white;
-font-size: medium;
-font-weight: bold;
-gap: 50px;
-padding-top: 20px;
-padding-bottom: 20px;
-border-radius: 20px;
-text-align: start;
-}
-.mark{
-    background-color: orangered;
-    gap: 80px;
-}
-.cat{
-  text-align: center;
-  padding-top: 10px;
-}
-.cat h1{
-  color: red;
-  padding-top: 10px;
-}
-.cat p{
-  padding-top: 10px;
-  color: #666;
-}
-.cat span h2{
-  color: orangered;
-}
-.hero-image img{
-    animation: float 3s infinite ease-in-out;
-}
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+    }
 
-@keyframes float{
-    0%{
+  
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 55px;
+      padding: 76px 8% 84px;
+      background:
+        radial-gradient(circle at 78% 42%, rgba(237, 91, 42, .10), transparent 28%),
+        var(--cream);
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 590px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.1px;
+      text-transform: uppercase;
+    }
+
+    .hero-text h1 {
+      margin-top: 17px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6.2vw, 78px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      font-weight: 800;
+    }
+
+    .hero-text h1 span {
+      color: var(--orange);
+    }
+
+    .hero-text > p:not(.eyebrow) {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .ball {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .ball button {
+      padding: 14px 23px;
+      border: 1px solid var(--orange);
+      border-radius: 7px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 9px 20px rgba(237, 91, 42, .18);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .ball button span {
+      margin-left: 9px;
+      font-size: 17px;
+    }
+
+    .ball button:hover {
+      background: var(--orange-dark);
+      transform: translateY(-3px);
+    }
+
+    .ball .secondary-btn {
+      background: transparent;
+      color: var(--ink);
+      border-color: #d9cec4;
+      box-shadow: none;
+    }
+
+    .ball .secondary-btn:hover {
+      background: #fff0e7;
+      color: var(--orange-dark);
+    }
+
+  
+
+    .hero-image {
+      position: relative;
+      flex: 0 1 440px;
+      width: 440px;
+    }
+
+    .hero-image > img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 10px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 9px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      font-size: 12px;
+      font-weight: 800;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .card small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+    }
+
+    .card1 {
+      top: 11%;
+      left: -7%;
+      color: var(--orange);
+    }
+
+    .card2 {
+      top: 44%;
+      right: -9%;
+      animation-delay: .6s;
+    }
+
+    .card3 {
+      bottom: 8%;
+      left: 4%;
+      animation-delay: 1.1s;
+    }
+
+    .card1 span {
+      font-size: 17px;
+    }
+
+    @keyframes float {
+      0%,100% {
         transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-9px);
+      }
     }
 
-    50%{
-        transform: translateY(-20px);
+
+
+    .mark {
+      overflow: hidden;
+      padding: 15px 0;
+      background: var(--orange);
     }
 
-    100%{
-        transform: translateY(0);
-    }
-}
-.card1{
-    animation: float 3s infinite ease-in-out ;
-}
-@keyframes float{
-    0%{
-        transform: translateY(0);
-    }
-
-    50%{
-        transform: translateY(-20px);
+    .shop {
+      display: flex;
+      width: max-content;
+      list-style: none;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      animation: scroll 28s linear infinite;
     }
 
-    100%{
-        transform: translateY(0);
-    }
-}
-.card2{
-    animation: float 3s infinite ease-in-out ;
-}
-@keyframes float{
-    0%{
-        transform: translateY(0);
+    .shop li {
+      white-space: nowrap;
+      padding-right: 35px;
     }
 
-    50%{
-        transform: translateY(-20px);
+    .shop span {
+      padding-left: 35px;
+      opacity: .7;
     }
 
-    100%{
-        transform: translateY(0);
-    }
-}
-.card3{
-    animation: float 3s infinite ease-in-out ;
-}
-@keyframes float{
-    0%{
-        transform: translateY(0);
+    @keyframes scroll {
+      to {
+        transform: translateX(-50%);
+      }
     }
 
-    50%{
-        transform: translateY(-20px);
+    /* CATEGORY HEADING */
+
+    .cat {
+      padding: 78px 6% 12px;
+      text-align: center;
     }
 
-    100%{
-        transform: translateY(0);
+    .cat h2 {
+      margin-top: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
     }
-}
-.card1{
-    background-color:red;
-    color: white;
-    font-size: medium;
-}
-.card2{
-    background-color: red;
-    color: white;
-    font-size: medium;
-}
-.card3{
-    background-color:red;
-    color: white;
-    font-size: medium;
-}
-/* ======================
-   TABLET RESPONSIVE
-====================== */
-@media (max-width: 992px){
 
-  .hero{
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
+    .cat h2 span {
+      color: var(--orange);
+    }
 
-  .hero-text,
-  .hero-image{
-    width: 100%;
-  }
+    .cat > p:last-child {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
 
-  .hero-image img{
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
+  
 
-  .category{
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .category {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 35px 6% 85px;
+    }
 
-  .box{
-    width: 45%;
-  }
-}
+    .box {
+      padding: 27px 20px 25px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--white);
+      text-align: center;
+      box-shadow: 0 7px 22px rgba(50, 35, 22, .035);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
 
-/* ======================
-   MOBILE RESPONSIVE
-====================== */
-@media (max-width: 768px){
+    .box:hover {
+      transform: translateY(-6px);
+      border-color: #f4c4ae;
+      box-shadow: var(--shadow);
+    }
 
-  /* Navbar */
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px;
-  }
+    .box img {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto;
+      border-radius: 50%;
+      object-fit: cover;
+      outline: 5px solid #fff2e9;
+    }
 
-  .sub{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    .box h3 {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 800;
+    }
 
-  .sub img{
-    width: 40px;
-    height: 40px;
-    position: static;
-  }
+    .box p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-  .sub h2{
-    font-size: 20px;
-  }
+  
 
-  .sub h3{
-    display: none;
-  }
+    .footer {
+      padding: 55px 20px 28px;
+      background: #25221f;
+      color: #f8eee6;
+      text-align: center;
+    }
 
-  .menu-toggle{
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-  }
+    .footer-content h2 {
+      color: #ff7849;
+      font-size: 29px;
+      letter-spacing: 2px;
+    }
 
-  .nav-links{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: 15px;
-    margin-top: 15px;
-  }
+    .footer-content > p {
+      margin-top: 5px;
+      color: #c8bdb4;
+      font-size: 13px;
+    }
 
-  .nav-links.active{
-    display: flex;
-  }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px 25px;
+      margin: 26px 0;
+    }
 
-  /* Hero Section */
-  .hero{
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+    .footer-links a {
+      color: #f8eee6;
+      text-decoration: none;
+      font-size: 12px;
+      transition: color .2s;
+    }
 
-  .hero-text{
-    width: 100%;
-  }
+    .footer-links a:hover {
+      color: #ff9b78;
+    }
 
-  .hero-text h1{
-    font-size: 40px;
-    line-height: 1.2;
-  }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      color: #e5c9b9;
+      font-size: 12px;
+    }
 
-  .hero-text p{
-    font-size: 14px;
-  }
+    .copy {
+      margin-top: 27px;
+      padding-top: 20px;
+      border-top: 1px solid #48413b;
+      color: #a99e95;
+      font-size: 11px;
+    }
 
-  .ball{
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+   
 
-  /* Hero Image */
-  .hero-image{
-    margin-top: 20px;
-  }
+    @media (max-width: 1000px) {
+      .navbar {
+        padding-inline: 5%;
+      }
 
-  .hero-image img{
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
+      .nav-links {
+        gap: 15px;
+      }
 
-  /* Floating Cards */
-  .card{
-    position: static;
-    display: inline-block;
-    margin: 8px;
-    margin-top: 20px;
-    
-  }
-  .card1{
-    position: absolute;
+      .hero {
+        padding-inline: 6%;
+        gap: 35px;
+      }
 
-  }
-  .card2{
-    position:absolute;
-    right: 60px;
-  }
-  .card3{
-    position: absolute;
-    right:300px;
-    bottom: 20px;
-  }
+      .hero-image {
+        flex-basis: 360px;
+      }
+    }
 
-  /* Category */
-  .category{
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
 
-  .box{
-    width: 90%;
-    max-width: 300px;
-  }
 
-  .cat h2{
-    font-size: 28px;
-  }
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 15px 5%;
+      }
 
-  /* Marquee */
-  .shop{
-    gap: 20px;
-    font-size: 14px;
-  }
-}
-@media (max-width:768px){
+      .sub img {
+        width: 38px;
+        height: 38px;
+      }
 
-  .navbar ul.nav-links{
-    display:none;
-  }
+      .brand-copy h2 {
+        font-size: 22px;
+      }
 
-  .navbar ul.nav-links.active{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-  }
+      .brand-copy h3 {
+        font-size: 8px;
+      }
 
-}
-@media (max-width:768px){
+      .menu-toggle {
+        display: block;
+      }
 
-  .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-  }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 12px 20px rgba(0,0,0,.06);
+      }
 
-  .menu-toggle{
-    display:block !important;
-    font-size:30px;
-    cursor:pointer;
-  }
+      .nav-links.active {
+        display: flex;
+      }
 
-  .nav-links{
-    display:none !important;
-    width:100%;
-    flex-direction:column;
-    text-align:center;
-    background:#fff;
-    margin-top:10px;
-    padding:10px 0;
-  }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
 
-  .nav-links.active{
-    display:flex !important;
-  }
+      .nav-links a {
+        display: block;
+        padding: 12px;
+        font-size: 13px;
+      }
 
-  .nav-links li{
-    padding:10px 0;
-  }
-}
-.footer{
-    background:darkred;
-    color:darkgoldenrod;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:50px;
-    
-}
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 58px 7% 65px;
+        gap: 48px;
+      }
 
-.footer-content h2{
-    color:orangered;
-    margin-bottom:10px;
-}
+      .hero-text {
+        width: 100%;
+      }
 
-.footer-links{
-    margin:20px 0;
-}
+      .hero-text h1 {
+        font-size: clamp(44px, 11vw, 62px);
+      }
 
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-}
+      .hero-text > p:not(.eyebrow) br,
+      .cat > p br {
+        display: none;
+      }
 
-.footer-links a:hover{
-    color:orangered;
-}
+      .ball {
+        justify-content: center;
+      }
 
-.copy{
-    margin-top:20px;
-    font-size:14px;
-    color:darkgoldenrod;
-    text-align: center;
-    font-weight: bold;
+      .hero-image {
+        width: min(78vw, 360px);
+        flex: auto;
+      }
 
-}
+      .card1 {
+        left: -4%;
+      }
 
-.para1{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-}
-.para2{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
-.para3{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
+      .card2 {
+        right: -4%;
+      }
 
+      .category {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-bottom: 65px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .hero-text > p:not(.eyebrow) {
+        font-size: 13px;
+      }
+
+      .ball {
+        flex-direction: column;
+      }
+
+      .ball button {
+        width: 100%;
+      }
+
+      .hero-image {
+        width: min(76vw, 290px);
+      }
+
+      .card {
+        padding: 9px 11px;
+        font-size: 10px;
+      }
+
+      .category {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+      }
+
+      .cat {
+        padding-top: 60px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-      
-     <nav class="navbar">
+
+
+  <nav class="navbar">
 
     <div class="sub">
-        <img src="fork-and-spoon.png" alt="">
+      <img src="fork-and-spoon.png" alt="SARAB logo">
+
+      <div class="brand-copy">
         <h2>SARAB</h2>
-        <h3>fast food & restaurant</h3>
+        <h3>FAST FOOD &amp; RESTAURANT</h3>
+      </div>
     </div>
 
-    <div class="menu-toggle">&#9776;</div>
+    <button class="menu-toggle" type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false">&#9776;</button>
 
     <ul class="nav-links">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="menu.html">MENU</a></li>
-        <li><a href="reservation.html">RESERVATION</a></li>
-        <li><a href="chef.html">CHEF</a></li>
-        <li><a href="review.html">REVIEW</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="menu.html">MENU</a></li>
+      <li><a href="reservation.html">RESERVATION</a></li>
+      <li><a href="chef.html">CHEF</a></li>
+      <li><a href="review.html">REVIEW</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
     </ul>
 
-</nav>
-   <hr>
+  </nav>
+
+  <hr>
+
+
+
   <section class="hero">
 
     <div class="hero-text">
-      <h2> ⭐#1 Rated Fast Food Restaurant in New Yorkbr</h2>
-        <h1>
-            Fast Food <br>
-           <span>for Every</span>  <br>
-            Moment
-        </h1>
 
-        <p>
-            Experience bold flavors crafted from premium <br>
-            From crispy burgers to gourmet pizzas - every bite <br>
-             is an adventure worth savoring.
-        </p>
-<div class="ball">
-    <button>🍴 View Menu</button>
-<button>▶ Watch Story</button>
-        </div>
+      <p class="eyebrow">
+        FRESHLY MADE • FULL OF FLAVOUR
+      </p>
+
+      <h1>
+        Good food.<br>
+        <span>Good mood.</span><br>
+        Every time.
+      </h1>
+
+      <p>
+        Fresh ingredients, bold flavours and feel-good favourites.<br>
+        From juicy burgers to cheesy pizzas, make every meal<br>
+        a moment worth enjoying.
+      </p>
+
+      <div class="ball">
+
+        <button type="button"
+          onclick="window.location.href='menu.html'">
+          Explore Menu <span aria-hidden="true">→</span>
+        </button>
+
+        <button class="secondary-btn" type="button"
+          onclick="window.location.href='about.html'">
+          Our Story
+        </button>
+
+      </div>
 
     </div>
 
     <div class="hero-image">
 
-        <img src="banner-img.jpg" alt="burger">
+      <img src="banner-img.jpg" alt="Burger">
 
-        <div class="card card1">Hot Deal</div>
+      <div class="card card1">
+        <span>.</span> Fresh &amp; Tasty
+      </div>
 
-        <div class="card card2">20 min</div>
+      <div class="card card2">
+        20 min <small>Delivery</small>
+      </div>
 
-        <div class="card card3">4.9/5</div>
+      <div class="card card3">
+        4.9/5 <small>Customer rating</small>
+      </div>
 
     </div>
-</section>
-<section class="mark">
-  <marquee behavior="right" direction="">
-     <ul class="shop">
-      <li> burger</li>
-      <li> pizza</li>
-      <li> candy</li>
-      <li> chicken</li>
-      <li> grill chicken</li>
-      <li> icecream </li>
-      <li>cool drinks</li>
-      <li> burger</li>
-      <li> pizza</li>
-      <li> candy</li>
-      <li> chicken</li>
-      <li> grill chicken</li>
+
+  </section>
+
+ 
+
+  <section class="mark">
+
+    <ul class="shop">
+
+      <li>BURGERS <span>*</span></li>
+      <li>PIZZA <span>*</span></li>
+      <li>DESSERTS <span>*</span></li>
+      <li>CHICKEN <span>*</span></li>
+      <li>GRILL SPECIALS <span>*</span></li>
+      <li>ICE CREAM <span>*</span></li>
+      <li>COOL DRINKS <span>*</span></li>
+
+      
+
+      <li>BURGERS <span>*</span></li>
+      <li>PIZZA <span>*</span></li>
+      <li>DESSERTS <span>*</span></li>
+      <li>CHICKEN <span>*</span></li>
+      <li>GRILL SPECIALS <span>*</span></li>
+      <li>ICE CREAM <span>*</span></li>
+      <li>COOL DRINKS <span>*</span></li>
+
     </ul>
 
-  </marquee>
-</section>
-<div class="cat">
-    <h1>What We Offer</h1> <br>
-    <h2>Browse <span>by</span> Category</h2> <br>
-    <p>From sizzling burgers to exotic world cuisines - <br>
-       find your favourite in our menu</p>
+  </section>
+
+ 
+
+  <div class="cat">
+
+    <p class="eyebrow">
+      EXPLORE OUR MENU
+    </p>
+
+    <h2>
+      Find your <span>favourites</span>
+    </h2>
+
+    <p>
+      Something delicious for every craving. Choose a category<br>
+      and discover your next favourite.
+    </p>
+
   </div>
-<section class="category">
-  
+
+
+
+  <section class="category">
 
     <div class="box">
-        <img src="img2.jpg">
-        <h3>All Items</h3>
-        <p>99 Items</p>
+      <img src="img2.jpg" alt="All items">
+      <h3>All Items</h3>
+      <p>99 delicious choices</p>
     </div>
 
     <div class="box">
-        <img src="img3.jpg">
-        <h3>Burgers</h3>
-        <p>24 Items</p>
+      <img src="img3.jpg" alt="Burgers">
+      <h3>Burgers</h3>
+      <p>24 delicious choices</p>
     </div>
 
     <div class="box">
-        <img src="img5.jpg">
-        <h3>Pizza</h3>
-        <p>18 Items</p>
+      <img src="img5.jpg" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>18 delicious choices</p>
     </div>
 
     <div class="box">
-        <img src="img4.jpg">
-        <h3>Fried Chicken</h3>
-        <p>15 Items</p>
+      <img src="img4.jpg" alt="Fried chicken">
+      <h3>Fried Chicken</h3>
+      <p>15 delicious choices</p>
     </div>
 
     <div class="box">
-        <img src="img4.jpg">
-        <h3>Wraps</h3>
-        <p>12 Items</p>
+      <img src="img4.jpg" alt="Wraps">
+      <h3>Wraps</h3>
+      <p>12 delicious choices</p>
     </div>
 
     <div class="box">
-        <img src="img7.jpg">
-        <h3>Desserts</h3>
-        <p>20 Items</p>
+      <img src="img7.jpg" alt="Desserts">
+      <h3>Desserts</h3>
+      <p>20 delicious choices</p>
     </div>
 
-</section>
-<script>
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+  </section>
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-</script>
+ 
+
   <footer class="footer">
+
     <div class="footer-content">
-        <h2>SARAB</h2>
-        <p>Fast Food & Restaurant</p>
 
-        <div class="footer-links">
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="menu.html">Menu</a>
-            <a href="reservation.html"> Reservation</a>
-            <a href="review.html">Review</a>
-            <a href="contact.html">Contact</a>
+      <h2>SARAB</h2>
 
-        </div>
+      <p>Fast Food &amp; Restaurant</p>
 
-        <p class="para1">📍 New York, USA</p>
-        <p class="para2">📞 +1 234 567 890</p>
-        <p class="para3">✉️ info@sarab.com</p>
+      <div class="footer-links">
 
-        <p class="copy">
-            © 2026 SARAB Restaurant. All Rights Reserved.
-        </p>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="review.html">Review</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <p>📍 Made fresh, served with love</p>
+        <p>📞 +1 234 567 890</p>
+        <p>✉️ info@sarab.com</p>
+
+      </div>
+
+      <p class="copy">
+        © 2026 SARAB Restaurant. All Rights Reserved.
+      </p>
+
     </div>
-</footer>
+
+  </footer>
+
+
+
+  <script>
+
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("active");
+
+      toggle.setAttribute("aria-expanded", String(isOpen));
+
+      toggle.innerHTML = isOpen ? "&times;" : "&#9776;";
+
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.innerHTML = "&#9776;";
+
+      });
+
+    });
+
+  </script>
+
 </body>
 </html>
