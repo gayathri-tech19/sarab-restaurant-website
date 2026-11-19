@@ -1,643 +1,800 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Our Chefs | SARAB Restaurant</title>
+
     <style>
-         .container{
-        width: 100%;
-        min-height:100vh ;
-    }
-    .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.nav-links{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fffaf5;
+            color: #292321;
+        }
 
-.nav-links a{
-    text-decoration:none;
-    color:black;
-}
+       
 
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-          /*reset & base fonts*/
-*{ 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-  .navbar{
+        .navbar {
             display: flex;
-            align-items: center;
-            gap: 40px;
             justify-content: space-between;
-            padding: 20px 60px;
+            align-items: center;
+            padding: 18px 7%;
+            background: #fff;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .nav-links{
-         display: flex;
-        gap: 30px;
-        list-style: none;
-        }
-        .navbar ul{
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        .navbar  ul li a{
-            text-decoration: none;
-            color: black;
-        }
-        .btn{
-            background-color: orangered;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius:5px;
-    
-        }
-         .sab-h2{
-            color: red;
-            font-weight: bold;
-        
-        }
-        .sab h3{
-            color: #2b3952;
-            font-weight: bold;
-        }
-        .sub img{
-            height: 50px;
-            width: 20px;
-            position: absolute;
-            right: 10px;
-        }
-        .navbar{
+
+        .sub {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 10px;
         }
-        .navbar ul{
-            display: flex;
-            list-style: none;
-            gap: 20px;
+
+        .sub img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
         }
-        .navbar  ul li a{
-            text-decoration: none;
-            color: black;
-        }
-        .btn{
-            background-color: orangered;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius:5px;
-        }
-        .sab h2 span{
+
+        .sub h2 {
+            font-family: 'Playfair Display', serif;
             color: orangered;
-
-
+            font-size: 27px;
         }
- 
 
- .chef{
-  width: 100%;
-  padding: 60px 0;
-  text-align: center;
-  overflow: hidden;
-  
-}
-.chef-title h1{
-  font-size: 50px;
-  color: orangered;
-  margin: 10px 0;
-}
-.chef-title p{
-  color:black;
-  font-size:large;
-  font-style: italic;
-}
-.chef-title h1 span{
-  color: orangered;
-}
-.line{
-  width: 55px;
-  height: 4px;
-  background:orangered;
-  margin: 20px auto 60px;
-  display: flex;
-  padding-left:10px;
-}
-.chef-card{
-    width:330px;
-    flex-shrink:0;
-    text-align: start;
-}
+        .sub h3 {
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 1px;
+        }
 
-.chef-card img{
-    width:100%;
-    height:390px;
-    object-fit:cover;
-    border-radius:10%;
-    padding-left: 20px;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
 
-.chef-card h2{
-    color:#333;
-    font-size:22px;
-    margin:18px 0 8px;
-    text-align: center;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.chef-card p{
-    color:red;
-    letter-spacing:2px;
-    font-size:14px;
-    margin:0;
-    text-align: center;
-}
-.chef-box{
-  display: flex;
-}
-.opening{
-    background:#0f5f6d;
-    padding:80px 0;
-}
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: orangered;
+        }
 
-.head{
-    text-align:center;
-    color:white;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: orangered;
+            cursor: pointer;
+        }
 
-.head span{
-    color:orange;
-}
+       
 
-.open-box{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:40px;
-}
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.hours,
-.find{
-    width:350px;
-    padding:25px;
-    background:darkolivegreen;
-    border-radius:15px;
-    color: white;
-    font-weight: bold;
-}
+        .section-heading .small-title {
+            color: orangered;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-.day{
-    display:flex;
-    justify-content:space-between;
-    margin:15px 0;
-}
+        .section-heading h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 43px;
+            margin-top: 12px;
+            color: #292321;
+        }
 
-.order{
-    width:280px;
-    padding:40px;
-    background:orangered;
-    border-radius:15px;
-    text-align:center;
-    color:white;
-}
+        .section-heading h1 span {
+            color: orangered;
+        }
 
-.order button{
-    padding:10px 25px;
-    border:none;
-    border-radius:20px;
-    margin-top:15px;
-}
-.review{
-    padding:80px 0;
-}
+        .section-heading .line {
+            width: 55px;
+            height: 4px;
+            background: orangered;
+            margin: 18px auto 0;
+            border-radius: 5px;
+        }
 
-.title1{
-    text-align:center;
-}
+        
 
-.title1 p{
-    color:orangered;
-    font-style:italic;
-    font-size: large;
-}
+        .chef {
+            padding: 85px 7%;
+        }
 
-.title1 h1{
-    font-size:55px;
-    color:darkred;
-}
+        .chef-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
 
-.title1 span{
-    color:red;
-}
+        .chef-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: 0.35s;
+            padding-bottom: 25px;
+        }
 
-.review-box{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:60px;
-}
+        .chef-card:hover {
+            transform: translateY(-9px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
 
-.card1{
-    width:320px;
-}
+        .chef-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
 
-.star{
-    color:orange;
-    font-size:20px;
-}
+        .chef-card:hover img {
+            transform: scale(1.04);
+        }
 
-.card1 p{
-    line-height:2;
-    color:darkgray;
-}
+        .chef-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin: 22px 0 8px;
+            color: #292321;
+        }
 
-.profile{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-top:20px;
-}
+        .chef-card p {
+            color: orangered;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
 
-.profile img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-}
-@media screen and (max-width:768px){
+       
 
-  /* Navbar */
-  .navbar{
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    padding:15px;
-  }
+        .opening {
+            background: #211b1a;
+            padding: 85px 7%;
+        }
 
-  .sub{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
+        .opening .section-heading h1 {
+            color: white;
+        }
 
-  .sub img{
-    width:40px;
-    height:40px;
-    position:static;
-  }
+        .opening .section-heading .small-title {
+            color: #e6a64b;
+        }
 
-  .sub h3{
-    display:none;
-  }
+        .opening .section-heading h1 span {
+            color: #e6a64b;
+        }
 
-  .menu-toggle{
-    display:block;
-    font-size:30px;
-    cursor:pointer;
-    margin-left:auto;
-  }
+        .opening .line {
+            background: #e6a64b;
+        }
 
-  .nav-links{
-    display:none;
-    flex-direction:column;
-    width:100%;
-    text-align:center;
-    gap:15px;
-    margin-top:15px;
-    padding:15px 0;
-  }
+        .open-box {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr 1.1fr;
+            gap: 22px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-  .nav-links.active{
-    display:flex;
-  }
+        .hours,
+        .find,
+        .order {
+            padding: 30px 25px;
+            border-radius: 12px;
+        }
 
-  /* About Section */
-  .about-section{
-    flex-direction:column;
-    padding:30px 20px;
-    gap:30px;
-  }
+        .hours,
+        .find {
+            background: #302725;
+            border: 1px solid #4a3b37;
+            color: white;
+        }
 
-  .about-image-wrapper{
-    width:100%;
-    text-align:center;
-  }
+        .hours h2,
+        .find h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #e6a64b;
+        }
 
-  .main-img{
-    width:100%;
-    max-width:350px;
-  }
+        .day {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px solid #51423e;
+            font-size: 13px;
+        }
 
-  .sub-img{
-    position:static;
-    width:150px;
-    margin-top:15px;
-  }
+        .day:last-child {
+            border-bottom: none;
+        }
 
-  .badge{
-    left:10px;
-    top:10px;
-    font-size:16px;
-    padding:10px 15px;
-  }
+        .day span:last-child {
+            color: #e6a64b;
+            text-align: right;
+        }
 
-  .about-content{
-    text-align:center;
-  }
+        .find p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 17px;
+            overflow-wrap: anywhere;
+        }
 
-  .about-content h2{
-    font-size:28px;
-  }
+        .order {
+            background: orangered;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-  .description{
-    font-size:15px;
-  }
+        .order .order-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-  .feature-item{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
+        .order h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
 
-  .btn-primary{
-    width:100%;
-    display:block;
-  }
-}
-.footer{
-    background:darkred;
-    color:darkgoldenrod;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:50px;
-    
-}
+        .order p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #ffe6e4;
+        }
 
-.footer-content h2{
-    color:orangered;
-    margin-bottom:10px;
-  
-}
+        .order button {
+            background: white;
+            color: orangered;
+            border: none;
+            padding: 13px 27px;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.footer-links{
-    margin:5px 0;
-}
+        .order button:hover {
+            background: #292321;
+            color: white;
+        }
 
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    margin:0 5px;
-    margin-bottom: 10px;
-  
-}
+       
 
-.footer-links a:hover{
-    color:orangered;
-}
+        .review {
+            padding: 85px 7%;
+        }
 
-.copy{
-    margin-top:20px;
-    font-size:14px;
-    color:darkgoldenrod;
-    text-align: center;
-    font-weight: bold;
+        .review-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-}
+        .card1 {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #f0e6df;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
 
-.para1{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-}
-.para2{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
-.para3{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
+        .card1:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
 
+        .star {
+            color: #f3a62b;
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
 
+        .card1 > p {
+            color: #777;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid #eee;
+        }
+
+        .profile img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile h3 {
+            font-size: 15px;
+            color: #292321;
+        }
+
+        .profile span {
+            display: block;
+            color: #999;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        
+
+        .footer {
+            background: #211b1a;
+            color: white;
+            padding: 55px 7% 20px;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: orangered;
+            margin-bottom: 8px;
+        }
+
+        .footer-content > p {
+            color: #c5b9b5;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 28px 0;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e64b51;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+            color: #c5b9b5;
+            font-size: 13px;
+        }
+
+        .copy {
+            border-top: 1px solid #493d3a;
+            padding-top: 20px;
+            margin-top: 30px;
+            color: #a99d99;
+            font-size: 12px;
+        }
+
+      
+
+        @media (max-width: 1000px) {
+            .chef-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .open-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .order {
+                grid-column: 1 / -1;
+                min-height: 230px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 22px 0 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .chef,
+            .review {
+                padding: 60px 6%;
+            }
+
+            .section-heading h1 {
+                font-size: 34px;
+            }
+
+            .chef-box {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .chef-card img {
+                height: 230px;
+            }
+
+            .chef-card h2 {
+                font-size: 18px;
+            }
+
+            .opening {
+                padding: 60px 6%;
+            }
+
+            .open-box {
+                grid-template-columns: 1fr;
+            }
+
+            .order {
+                grid-column: auto;
+            }
+
+            .review-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sub h2 {
+                font-size: 23px;
+            }
+
+            .sub h3 {
+                font-size: 8px;
+            }
+
+            .chef-box {
+                grid-template-columns: 1fr;
+                max-width: 340px;
+            }
+
+            .chef-card img {
+                height: 330px;
+            }
+
+            .section-heading h1 {
+                font-size: 29px;
+            }
+
+            .day {
+                font-size: 12px;
+            }
+
+            .hours,
+            .find,
+            .order {
+                padding: 25px 18px;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 
 <body>
-        
-        <nav class="navbar">
 
-    <div class="sub">
-        <img src="fork-and-spoon.png" alt="">
-        <h2>SARAB</h2>
-        <h3>fast food & restaurant</h3>
-    </div>
+   
 
-    <div class="menu-toggle">&#9776;</div>
+    <nav class="navbar">
 
-    <ul class="nav-links">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="menu.html">MENU</a></li>
-        <li><a href="reservation.html">RESERVATION</a></li>
-        <li><a href="chef.html">CHEF</a></li>
-        <li><a href="review.html">REVIEW</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
+        <div class="sub">
+            <img src="fork-and-spoon.png" alt="SARAB Logo">
 
-</nav>
-   <hr>
+            <div>
+                <h2>SARAB</h2>
+                <h3>FAST FOOD & RESTAURANT</h3>
+            </div>
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="reservation.html">RESERVATION</a></li>
+            <li><a href="chef.html" class="active">CHEF</a></li>
+            <li><a href="review.html">REVIEW</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+    </nav>
+
+
     <section class="chef">
 
-    <div class="chef-title">
-        <p>The Culinary Team</p>
-        <h1>Meet Our Expert <span>Chefs</span></h1>
-        </div>
-        <div class="line"></div>
-    </div>
-
-    <div class="chef-box">
-
-        <div class="chef-card">
-            <img src="chef1.jpg">
-            <h2>Alice Mortal</h2>
-            <p>HEAD CHEF</p>
+        <div class="section-heading">
+            <p class="small-title">The Culinary Team</p>
+            <h1>Meet Our Expert <span>Chefs</span></h1>
+            <div class="line"></div>
         </div>
 
-        <div class="chef-card">
-            <img src="chef2.jpg">
-            <h2>Michael Corn</h2>
-            <p>GRILL MASTER</p>
-        </div>
-<div class="chef-card">
-  <img src="chef3.jpg" alt="">
-  <h2>Faz Chowdel</h2>
-  <p> Pastry Chef</p>
-</div>
-<div class="chef-card">
-  <img src="chef4.jpg" alt="">
-  <h2>William Latnum</h2>
-  <p>Pizza Artisan</p>
-</div>
-</div>
-</section>
+        <div class="chef-box">
 
-<section class="opening">
-
-    <div class="head">
-        <p>Opening Hours</p>
-        <h1>We're Open <span>For You</span></h1>
-    </div>
-
-    <div class="open-box">
-
-        <!-- Left Box -->
-        <div class="hours">
-
-            <div class="day">
-                <span>Monday - Tuesday</span>
-                <span>Closed</span>
+            <div class="chef-card">
+                <img src="chef1.jpg" alt="Chef Alice">
+                <h2>Alice Mortal</h2>
+                <p>HEAD CHEF</p>
             </div>
 
-            <div class="day">
-                <span>Wednesday - Thursday</span>
-                <span>09:00 AM - 10:00 PM</span>
+            <div class="chef-card">
+                <img src="chef2.jpg" alt="Chef Michael">
+                <h2>Michael Corn</h2>
+                <p>GRILL MASTER</p>
             </div>
 
-            <div class="day">
-                <span>Friday</span>
-                <span>09:00 AM - 11:00 PM</span>
+            <div class="chef-card">
+                <img src="chef3.jpg" alt="Chef Faz">
+                <h2>Faz Chowdel</h2>
+                <p>PASTRY CHEF</p>
             </div>
 
-            <div class="day">
-                <span>Saturday</span>
-                <span>10:00 AM - 11:30 PM</span>
-            </div>
-
-            <div class="day">
-                <span>Sunday</span>
-                <span>11:00 AM - 09:00 PM</span>
+            <div class="chef-card">
+                <img src="chef4.jpg" alt="Chef William">
+                <h2>William Latnum</h2>
+                <p>PIZZA ARTISAN</p>
             </div>
 
         </div>
 
-        <!-- Center Box -->
-        <div class="order">
-            <h2>Order Online</h2>
-            <p>Get hot food delivered in 25 minutes</p>
-            <button>Order Now</button>
+    </section>
+
+    
+
+    <section class="opening">
+
+        <div class="section-heading">
+            <p class="small-title">Visit Us Anytime</p>
+            <h1>We're Open <span>For You</span></h1>
+            <div class="line"></div>
         </div>
 
-        <!-- Right Box -->
-        <div class="find">
-            <h2>Find Us</h2><br>
-            <p>Address : 42 Flavor Street</p><br>
-            <p>Phone : +91 9876543210</p><br>
-            <p>Email : hello@sarabfood.com</p><br>
+        <div class="open-box">
+
+            <div class="hours">
+                <h2>Opening Hours</h2>
+
+                <div class="day">
+                    <span>Monday - Tuesday</span>
+                    <span>Closed</span>
+                </div>
+
+                <div class="day">
+                    <span>Wednesday - Thursday</span>
+                    <span>09 AM - 10 PM</span>
+                </div>
+
+                <div class="day">
+                    <span>Friday</span>
+                    <span>09 AM - 11 PM</span>
+                </div>
+
+                <div class="day">
+                    <span>Saturday</span>
+                    <span>10 AM - 11:30 PM</span>
+                </div>
+
+                <div class="day">
+                    <span>Sunday</span>
+                    <span>11 AM - 09 PM</span>
+                </div>
+            </div>
+
+            <div class="order">
+                <div class="order-icon">🍔</div>
+                <h2>Order Online</h2>
+                <p>Get hot food delivered in 25 minutes.</p>
+                <button onclick="window.location.href='menu.html'">
+                    Order Now →
+                </button>
+            </div>
+
+            <div class="find">
+                <h2>Find Us</h2>
+                <p>📍 Address: 42 Flavor Street</p>
+                <p>📞 Phone: +91 9876543210</p>
+                <p>✉️ Email: hello@sarabfood.com</p>
+            </div>
+
         </div>
 
-    </div>
+    </section>
 
-</section>
- <section class="review">
+    
 
-    <div class="title1">
-        <p>What People Say</p>
-        <h1>Our Customers <span>Feedback</span></h1>
-    </div>
+    <section class="review">
 
-    <div class="review-box">
+        <div class="section-heading">
+            <p class="small-title">What People Say</p>
+            <h1>Our Customers <span>Feedback</span></h1>
+            <div class="line"></div>
+        </div>
 
-        <div class="card1">
-            <div class="star">★★★★★</div>
+        <div class="review-box">
 
-            <p>
-                Honestly the best burgers I've ever had Reserve your table for a memorable dining experience. We recommend booking...
+            <div class="card1">
+                <div class="star">★★★★★</div>
+
+                <p>
+                    Honestly, the best burgers I've ever had.
+                    Amazing taste, friendly service and a wonderful
+                    dining experience.
+                </p>
+
+                <div class="profile">
+                    <img src="rev3.jpg" alt="Monica Wilber">
+                    <div>
+                        <h3>Monica Wilber</h3>
+                        <span>Regular Customer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card1">
+                <div class="star">★★★★★</div>
+
+                <p>
+                    Ordered delivery and the food arrived hot.
+                    Everything was fresh, delicious and perfectly
+                    packed.
+                </p>
+
+                <div class="profile">
+                    <img src="rev2.jpg" alt="Cameron Fox">
+                    <div>
+                        <h3>Cameron Fox</h3>
+                        <span>Happy Customer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card1">
+                <div class="star">★★★★★</div>
+
+                <p>
+                    The truffle pasta was amazing. Great flavours,
+                    beautiful presentation and excellent service.
+                </p>
+
+                <div class="profile">
+                    <img src="rev1.jpg" alt="Priya Sharma">
+                    <div>
+                        <h3>Priya Sharma</h3>
+                        <span>Food Lover</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h2>SARAB</h2>
+            <p>Good Food. Good Mood. Great Memories.</p>
+
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="chef.html">Chef</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <p>📍 New York, USA</p>
+                <p>📞 +1 234 567 890</p>
+                <p>✉️ info@sarab.com</p>
+            </div>
+
+            <p class="copy">
+                © 2026 SARAB Restaurant. All Rights Reserved.
             </p>
 
-            <div class="profile">
-                <img src="rev3.jpg" alt="">
-                <h3>Monica Wilber</h3>
-            </div>
         </div>
 
-        <div class="card1">
-            <div class="star">★★★★★</div>
+    </footer>
 
-            <p>
-                Ordered delivery and the food arrived hot Reserve your table for a memorable dining experience. We recommend booking...
-            </p>
+   
 
-            <div class="profile">
-              <img src="rev2.jpg" alt="">
-                <h3>Cameron Fox</h3>
-            </div>
-        </div>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-        <div class="card1">
-            <div class="star">★★★★★</div>
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
-            <p>
-                The truffle pasta blew my mind Reserve your table for a memorable dining experience. We recommend booking...
-            </p>
-
-            <div class="profile">
-               <img src="rev1.jpg" alt="">
-                <h3>Priya Sharma</h3>
-            </div>
-        </div>
-
-    </div>
-
-  </section>
-  <script>
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-</script>
-
-<footer class="footer">
-    <div class="footer-content">
-        <h2>SARAB</h2>
-        <p>Fast Food & Restaurant</p>
-
-        <div class="footer-links">
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="menu.html">Menu</a>
-            <a href="reservation.html">Reservation</a>
-            <a href="chef.html">Chef</a>
-            <a href="review.html">Review</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <p class="para1">📍 New York, USA</p>
-        <p class="para2">📞 +1 234 567 890</p>
-        <p class="para3">✉️ info@sarab.com</p>
-
-        <p class="copy">
-            © 2026 SARAB Restaurant. All Rights Reserved.
-        </p>
-    </div>
-</footer>
-  
 </body>
 </html>
