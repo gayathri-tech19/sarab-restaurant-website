@@ -1,849 +1,1109 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu | SARAB Restaurant</title>
+
+    
+
     <style>
-      .container{
-        width: 100%;
-        min-height:100vh ;
-    }
-  *{ 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-  .navbar{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fffaf5;
+            color: #292321;
+        }
+
+      
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: #fff;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .sub {
             display: flex;
             align-items: center;
-            gap: 40px;
-            justify-content: space-between;
-            padding: 20px 60px;
+            gap: 10px;
         }
-        .nav-links{
-         display: flex;
-        gap: 30px;
-        list-style: none;
+
+        .sub img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
         }
-        .navbar ul{
+
+        .sub h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: orangered;
+        }
+
+        .sub h3 {
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
             display: flex;
+            align-items: center;
+            gap: 25px;
             list-style: none;
-            gap: 20px;
         }
-        .navbar  ul li a{
+
+        .nav-links a {
             text-decoration: none;
-            color: black;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .btn{
-            background-color: orangered;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius:5px;
-    
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: orangered;
         }
-         .sab-h2{
-            color: red;
-            font-weight: bold;
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: orangered;
+            cursor: pointer;
+        }
+
+      
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading .small-title {
+            color: orangered;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 43px;
+            margin-top: 12px;
+            color: #292321;
+        }
+
+        .section-heading h1 span {
+            color: orangered;
+        }
+
+        .line {
+            width: 55px;
+            height: 4px;
+            background: orangered;
+            margin: 18px auto 0;
+            border-radius: 5px;
+        }
+
         
+
+        .menu-area {
+            padding: 75px 7%;
+            background: #fffaf5;
         }
-        .sab h3{
-            color: #2b3952;
-            font-weight: bold;
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 45px;
         }
-        .sub img{
-            height: 50px;
-            width: 20px;
+
+        .category-btn {
+            border: 1px solid #e8d9d1;
+            background: white;
+            color: #444;
+            padding: 11px 23px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: orangered;
+            color: white;
+            border-color: orangered;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 13px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.11);
+        }
+
+        .menu-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .menu-card:hover .menu-image img {
+            transform: scale(1.06);
+        }
+
+        .menu-info {
+            padding: 23px;
+        }
+
+        .menu-rating {
+            color: #e8a12c;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .menu-rating span {
+            color: #999;
+            margin-left: 5px;
+        }
+
+        .menu-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+            color: #292321;
+        }
+
+        .menu-info p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.8;
+            min-height: 70px;
+        }
+
+        .menu-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            color: orangered;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .food-tag {
+            background: #fff0e8;
+            color: orangered;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 12px;
+            border-radius: 20px;
+        }
+
+        .menu-card.hide {
+            display: none;
+        }
+
+        
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            padding: 80px 9%;
+            background: #211b1a;
+            color: white;
+            overflow: hidden;
+        }
+
+        .offer-content {
+            flex: 1;
+        }
+
+        .offer {
+            display: inline-block;
+            background: #e6a64b;
+            color: #211b1a;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .offer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 49px;
+            line-height: 1.2;
+            margin: 25px 0;
+        }
+
+        .orange {
+            color: #e6a64b;
+        }
+
+        .offer-content > p {
+            color: #d0c5c0;
+            line-height: 1.9;
+            font-size: 14px;
+            max-width: 520px;
+        }
+
+        .timer {
+            display: flex;
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .timer .box {
+            background: #302725;
+            padding: 16px 20px;
+            border-radius: 9px;
+            min-width: 85px;
+            text-align: center;
+        }
+
+        .box h3 {
+            font-size: 25px;
+            color: #e6a64b;
+        }
+
+        .box p {
+            font-size: 11px;
+            color: #c5b9b5;
+            margin-top: 5px;
+        }
+
+        .deal-btn {
+            margin-top: 28px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 5px;
+            background: orangered;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .deal-btn:hover {
+            background: #e6a64b;
+            color: #211b1a;
+        }
+
+        .offer-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .burger-img {
+            width: 100%;
+            max-width: 470px;
+            object-fit: contain;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+       
+
+        .food1 {
+            padding: 85px 7%;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 220px;
+            gap: 16px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .food-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .food-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .food-grid .big {
+            grid-row: span 2;
+        }
+
+       
+
+        .history {
+            padding: 80px 7%;
+            background: #fff2e9;
+        }
+
+        .history .section-heading p {
+            color: orangered;
+        }
+
+        .history .section-heading h1 {
+            font-size: 40px;
+        }
+
+        .history .section-heading .description {
+            color: #777;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 55px auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
             position: absolute;
-            left: 10px;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d88b98;
         }
-      .navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  font-size: 14px;
-  list-style: none;
-}
-
-.nav-link1{
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  text-align: center;
-  
-.nav-link1 ul{
-  display: flex;
-  list-style: none;
-  text-decoration: none;
-}
-
-}
-.order-btn {
-  background-color: #be2e3a;
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
- .head{
-  text-align: center;
-  font-size: large;
-}
-.head h1 span{
-    color: orangered;
-    font-size:xxx-large;
-}
-.head h3{
-    color: orangered;
-    font-style: italic;
-}
-.nav-link1{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding-top: 20px;
-  list-style: none;
-  text-decoration: none;
-}
-.container{
-  align-items: center;
-  gap: 20px;
-  width:100%;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  padding-top: 100px;
-  background-color:linen;
-}
-.menu-section{
-  width: 390px;
-    height:400px;
-    background:white;
-    border-radius:15px;
-    text-align:center;
-    padding:20px;
-    box-shadow:0 0 40px rgba(0,0,0,0.1);
-}
-.menu-section img{
-  width:100px;
-    height:100px;
-    border-radius:50%;
-}
-.menu-section h3{
-  color: orangered;
-  padding-top: 20px;
-  text-align: start;
-}
-.menu-section h4{
-  padding-top: 10px;
-  color: #888;
-  font-size:small ;
-  text-align: start;
-
-}
-.menu-section p{
-  color:black;
-  padding-top: 10px;
-  text-align: start;
-  font-weight: bold;
-  font-size: large;
-}
-.menu-section h2{
-  color: #666;
-  text-align: start;
-  padding-top: 10px;
-}
-
-
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:80px;
-    min-height:100vh;
-    background-color:brown;
-    padding-top: 20px;
-}
-
-.content{
-    width:50%;
-}
-
-.image{
-    width:50%;
-    text-align:right;
-}
-
-.offer{
-    background:orange;
-    padding:10px 20px;
-    border-radius:20px;
-}
-
-h1{
-    font-size:60px;
-    margin-top:20px;
-}
-
-.orange{
-    color:orange;
-}
-
-.timer{
-    display:flex;
-    gap:20px;
-    margin-top:30px;
-    color: white;
-}
-    
-
-.box{
-    background:#222;
-    padding:20px;
-    border-radius:10px;
-}
-
-
-.deal-btn{
-    margin-top:20px;
-    padding:15px 30px;
-    border:none;
-    border-radius:30px;
-    background:orange;
-    color:white;
-}
-
-.burger-img{
-    width:450px;
-    animation:float 3s infinite ease-in-out;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-.food1{
-  text-align: center;
-  padding-top: 5%;
-
-}
-.food1 h3{
-  font-style: italic;
-  color: red;
-}
-.food1 h1{
-  font-weight: bold;
-}
-.food-grid{
- 
-    display: grid;
-        grid-template-columns: repeat(3,1fr);
-        width: 100%;
-        height: auto;
-        /* background-color: rgb(74, 119, 119); */
-        gap: 15px;
-        padding: 5px;
-}
-.food-grid .d1{
-  width: 100%;
-  height: 200px;
-  border-radius: 15px;
-  /* object-fit: cover; */
-}
-.food-grid .big{
-  grid-row: span 2;
-        height: 400px;
-    
-}
-.history{
-    width: 100%;
-    padding: 60px 0;
-}
-
-.timeline{
-    width: 1000px;
-    margin: 50px auto;
-    position: relative;
-}
-
-/* Middle line */
-.timeline::before{
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #d88b98;
-}
-
-/* Left & Right */
-.history-container{
-    width: 50%;
-    padding: 30px 60px;
-    position: relative;
-}
-
-.history-container.left{
-    text-align: right;
-}
-
-.history-container.right{
-    margin-left: 50%;
-    text-align: left;
-}
-
-/* Circle */
-.history-container::after{
-    content: "";
-    position: absolute;
-    top: 30px;
-    width: 14px;
-    height: 14px;
-    background: #d88b98;
-    border-radius: 50%;
-}
-
-.history-container.left::after{
-    right: -7px;
-}
-
-.history-container.right::after{
-    left: -7px;
-}
-
-/* Text */
-.content h3{
-    color: #d88b98;
-    font-size: 20px;
-}
-
-.content h2{
-    color: #53698f;
-    font-size: 22px;
-}
-
-.content p{
-    color:black;
-    line-height: 1.6;
-    font-weight: bold;
-
-}
-.title h5{
-  color: #ff7b89;
-  font-size: 22px;
-  font-style: italic;
-}
-.title h1{
-  font-size: 55px;
-  margin: 15px 0;
-}
-.title p{
-  color: gray;
-}
-.title{
-  text-align: center;
-  padding-top:20px;
-}
-.menu-toggle{
-  display:none;
-}
-
-.menu-toggle{
-  display:none;
-}
-
-/* MOBILE */
-@media screen and (max-width:768px){
-
-  .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    padding:15px 20px;
-  }
-
-  .sub{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-
-  .sub img{
-    width:40px;
-    height:40px;
-    position:static;
-  }
-
-  .sub h3{
-    display:none;
-  }
-
-  .menu-toggle{
-    display:block;
-    font-size:32px;
-    cursor:pointer;
-  }
-
-  .nav-links{
-    display:none;
-    flex-direction:column;
-    width:100%;
-    text-align:center;
-    gap:15px;
-    padding:15px 0;
-  }
-
-  .nav-links.active{
-    display:flex;
-  }
-
-  .nav-links li{
-    list-style:none;
-  }
-
-  .nav-links li a{
-    display:block;
-    padding:10px;
-  }
-
-  /* Cards */
-  .container{
-    flex-direction:column;
-    padding:20px;
-  }
-
-  .menu-section{
-    width:100%;
-    height:auto;
-  }
-
-  /* Hero */
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:30px 20px;
-  }
-
-  .content,
-  .image{
-    width:100%;
-    margin-top: 40px;
-  }
-
-  .burger-img{
-    width:250px;
-    max-width:100%;
-  }
-
-  /* Gallery */
-  .food-grid{
-    grid-template-columns:1fr;
-  }
-
-  .food-grid .big{
-    grid-row:span 1;
-    height:250px;
-  }
-
-  /* Timeline */
-  .timeline{
-    width:100%;
-  }
-
-  .timeline::before{
-    left:15px;
-  }
-
-  .history-container{
-    width:100%;
-    margin-left:0 !important;
-    text-align:left !important;
-    padding:20px 20px 20px 50px;
-  }
-
-  .history-container::after{
-    left:8px !important;
-  }
-}
-  @media (max-width:768px){
-
-  .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-  }
-
-  .menu-toggle{
-    display:block !important;
-    font-size:30px;
-    cursor:pointer;
-  }
-
-  .nav-links{
-    display:none !important;
-    width:100%;
-    flex-direction:column;
-    text-align:center;
-    background:#fff;
-    margin-top:10px;
-    padding:10px 0;
-  }
-
-  .nav-links.active{
-    display:flex !important;
-  }
-
-  .nav-links li{
-    padding:10px 0;
-  }
-}  
-/* ======================
-   MOBILE RESPONSIVE
-====================== */
-@media (max-width: 768px){
-
-  /* Navbar */
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px;
-  }
-
-  .sub{
-    display: flex;
-    align-items:start;
-    gap: 10px;
-    
-  }
-
-  .sub img{
-    width: 40px;
-    height: 40px;
-    position: static;
-  }
-
-  .sub h2{
-    font-size: 20px;
-  }
-
-  .sub h3{
-    display: none;
-  }
-
-  .menu-toggle{
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-   text-align: end;
-  }
-
-  .nav-links{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .nav-links.active{
-    display: flex;
-  }   
-}
-.footer{
-    background:darkred;
-    color:darkgoldenrod;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:50px;
-    
-}
-
-.footer-content h2{
-    color:orangered;
-    margin-bottom:10px;
-}
-
-.footer-links{
-    margin:20px 0;
-}
-
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-}
-
-.footer-links a:hover{
-    color:orangered;
-}
-
-.copy{
-    margin-top:20px;
-    font-size:14px;
-    color:darkgoldenrod;
-    text-align: center;
-    font-weight: bold;
-
-}
-
-.para1{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-}
-.para2{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
-.para3{
-  text-align: start;
-  font-weight: bold;
-  color:darkturquoise;
-  margin-top: 20px;
-}
 
+        .history-container {
+            width: 50%;
+            padding: 20px 55px;
+            position: relative;
+        }
+
+        .history-container.left {
+            text-align: right;
+        }
+
+        .history-container.right {
+            margin-left: 50%;
+            text-align: left;
+        }
+
+        .history-container::after {
+            content: "";
+            position: absolute;
+            top: 28px;
+            width: 14px;
+            height: 14px;
+            background: orangered;
+            border: 4px solid #fff2e9;
+            border-radius: 50%;
+            box-sizing: content-box;
+        }
+
+        .history-container.left::after {
+            right: -11px;
+        }
+
+        .history-container.right::after {
+            left: -11px;
+        }
+
+        .history-container h3 {
+            color: orangered;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .history-container h2 {
+            font-family: 'Playfair Display', serif;
+            color: #292321;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .history-container p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        
+
+        .footer {
+            background: #211b1a;
+            color: white;
+            padding: 55px 7% 20px;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: orangered;
+            margin-bottom: 8px;
+        }
+
+        .footer-content > p {
+            color: #c5b9b5;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 28px 0;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e64b51;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+            color: #c5b9b5;
+            font-size: 13px;
+        }
+
+        .copy {
+            border-top: 1px solid #493d3a;
+            padding-top: 20px;
+            margin-top: 30px;
+            color: #a99d99;
+            font-size: 12px;
+        }
+   
+
+        @media (max-width: 1000px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .offer-content h2 {
+                font-size: 39px;
+            }
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 22px 0 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-area,
+            .food1 {
+                padding: 60px 6%;
+            }
+
+            .section-heading h1 {
+                font-size: 34px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                max-width: 430px;
+            }
+
+            .menu-image {
+                height: 240px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 6%;
+            }
+
+            .offer-content > p {
+                margin: auto;
+            }
+
+            .offer-content h2 {
+                font-size: 37px;
+            }
+
+            .timer {
+                justify-content: center;
+            }
+
+            .burger-img {
+                max-width: 300px;
+            }
+
+            .food-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+            }
+
+            .food-grid .big {
+                grid-row: span 1;
+            }
+
+            .history {
+                padding: 60px 6%;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .history-container,
+            .history-container.right {
+                width: 100%;
+                margin-left: 0;
+                text-align: left;
+                padding: 20px 10px 25px 40px;
+            }
+
+            .history-container.left::after,
+            .history-container.right::after {
+                left: 0;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sub h2 {
+                font-size: 23px;
+            }
+
+            .sub h3 {
+                font-size: 8px;
+            }
+
+            .section-heading h1 {
+                font-size: 29px;
+            }
+
+            .category-list {
+                gap: 9px;
+            }
+
+            .category-btn {
+                padding: 9px 15px;
+                font-size: 12px;
+            }
+
+            .offer-content h2 {
+                font-size: 31px;
+            }
+
+            .timer {
+                gap: 8px;
+            }
+
+            .timer .box {
+                min-width: 72px;
+                padding: 13px 10px;
+            }
+
+            .food-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 220px;
+            }
+
+            .history .section-heading h1 {
+                font-size: 30px;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
-       
+
 <body>
-            <nav class="navbar">
-
-    <div class="sub">
-        <img src="fork-and-spoon.png" alt="">
-        <h2>SARAB</h2>
-        <h3>fast food & restaurant</h3>
-    </div>
-
-    <div class="menu-toggle">&#9776;</div>
-
-    <ul class="nav-links">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="menu.html">MENU</a></li>
-        <li><a href="reservation.html">RESERVATION</a></li>
-        <li><a href="review.html">REVIEW</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
-
-</nav>
-   <hr>
-    <section class="head">
-  <h3>What's Cooking</h3>
-  <h1>Our <span>Delicious</span> Menu</h1>
-</section>
-<nav>
-<div class="nav">
-  <ul class="nav-link1">
-                    <li>  <a href="all">all</a> </li>
-                    <li>  <a href="burger">burger</a></li>
-                    <li> <a href="pizza">pizza</a></li>
-                    <li> <a href="fried chicken">fried chicken</a> </li>
-                    <li><a  href="warps">warps</a></li>
-                    <li> <a href="desserts">desserts </a></li>
-                    
-                </ul>
-
-    </nav>
-  
-</div>
-<div class="container">
-<div id="burger" class="menu-section">
-  <img src="img2.jpg" alt="">
-   <h3>Classic Smash Burger</h3>
-      <h4>⭐⭐⭐⭐⭐4.9(128 reviews)</h4>
-      <p>Double smashed patty, cheddar cheese, caramelized onions, house pickles and our legendary special sauce. Made fresh to order on a toasted brioche bun.</p>
-      <h2> $14.99</h2>
-</div>
-<div id="pizza" class="menu-section">
-  <img src="img3.jpg" alt="">
-      <h3>Nashville Hot Chicken</h3>
-      <h4>⭐⭐⭐⭐⭐ 5 (210 reviews)</h4>
-      <p>Extra-crispy fried chicken tossed in our signature fiery Nashville spice blend, served with honey drizzle and house pickles on a toasted brioche bun</p>
-      <h2>$16.33</h2>
-</div>
-<div id="fried chicken" class="menu-section">
-  <img src="img4.jpg" alt="">
-  <h3> Loaded Fajita Wrap</h3>
-      <h4> ⭐⭐⭐⭐ 4.8 (95 reviews)</h4>
-      <p> Grilled chicken strips, saut�ed bell peppers and onions, sour cream, fresh guacamole and salsa wrapped in a warm flour tortilla with melted cheddar.</p>
-      <h2> $10.99</h2>
-</div>
-<div id="wraps" class="menu-section">
-  <img src="img5.jpg" alt="">
-  <h3> Loaded Fajita Wrap</h3>
-      <h4> ⭐⭐⭐⭐ 4.8 (95 reviews)</h4>
-      <p> Grilled chicken strips, saut�ed bell peppers and onions, sour cream, fresh guacamole and salsa wrapped in a warm flour tortilla with melted cheddar.</p>
-      <h2> $10.99</h2>
-
-</div>
-<div id="desserts" class="menu-section">
-  <img src="img7.jpg" alt="">
-  <h3> Loaded Fajita Wrap</h3>
-      <h4> ⭐⭐⭐⭐ 4.8 (95 reviews)</h4>
-      <p> Grilled chicken strips, saut�ed bell peppers and onions, sour cream, fresh guacamole and salsa wrapped in a warm flour tortilla with melted cheddar.</p>
-      <h2> $10.99</h2>
-</div>
-</div>
-</section>
-
-<section class="hero">
-
-    <div class="content">
-
-        <span class="offer">⚡LIMITED TIME OFFER</span>
-
-        <h1>
-            Get 30% Off <br>
-            Our Signature <br>
-            <span class="orange">Burger</span> Meal
-        </h1>
-
-        <p>
-            Don't miss our weekend special.Don't miss our weekend special - grab our award-winning signature burger combo with loaded fries and a premium shake at an unbeatable price.
-        </p>
-
-        <div class="timer">
-
-            <div class="box">
-                <h2>08</h2>
-                <p>Hours</p>
-            </div>
-
-            <div class="box">
-                <h2>44</h2>
-                <p>Minutes</p>
-            </div>
-
-            <div class="box">
-                <h2>31</h2>
-                <p>Seconds</p>
-            </div>
-
-        </div>
-
-        <button class="deal-btn">Grab The Deal</button>
-
-    </div>
-
-    <div class="image">
-        <img src="off-img.jpg" class="burger-img">
-    </div>
-
-</section>
-<section class="food1">
-  <h3> Food Showcase</h3>
-  <h1> Let's See Our Fast Food</h1>
-
-  <div class="food-grid">
-    <img src="img2.jpg" alt="" class="big d1">
-    <img src="img3.jpg" alt="" class=" d1">
-    <img src="img4.jpg" alt="" class=" d1">
-    <img src="img5.jpg" alt="" class=" d1">
-    <img src="img7.jpg" alt="" class=" d1">
-  </div>
-  </section>
-  
-<section class="history">
-  <div class="title">
-    <h5>bur journey</h5>
-    <h1> A History of Restaurant</h1>
-    <p> From humble beginnings to the city's most beloved restaurant - every chapter written with passion.</p>
-  </div>
-  <div class="timeline">
-    <div class=" history-container left">
-      <div class="content">
-        <h3>2012</h3>
-        <h2> Evolution of Restaurants</h2>
-        <p> Sarab opens its first 20-seat diner on Flavor Street. Within 3 months, </p>
-      </div>
-    </div>
-  
-  <div class="history-container right">
-    <div class="content">
-      <h3> 2015</h3>
-      <h2>Fine Dining & The Concept</h2>
-      <p>Expanding the vision - we introduced our signature tasting menu and hired our first Michelin-trained chef, elevating our craf</p>
-    </div>
-  </div>
-  <div class="history-container left">
-    <div class="content">
-      <h3>2019</h3>
-      <h2>Modern Fast Food Origins</h2>
-      <p>Launched our signature fast-food line, merging gourmet quality with speed and convenience. Within 6 months we won 3 prestigious culinary awards nationally.</p>
-    </div>
-  </div>
-  <div class="history-container right">
-    <div class="content">
-      <h3> 2026</h3>
-      <h2> National Expansion</h2>
-      <p> Now operating in 8 cities across the US with an online delivery platform handling 10,000+ orders weekly - and growing every single day.</p>
-    </div>
-  </div>
-  </div>
-</section>
-<script>
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-</script>
-<footer class="footer">
-    <div class="footer-content">
-        <h2>SARAB</h2>
-        <p>Fast Food & Restaurant</p>
-
-        <div class="footer-links">
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="menu.html">Menu</a>
-            <a href="reservation.html"> Reservation</a>
-            <a href="review.html">Review</a>
-            <a href="contact.html">Contact</a>
-
-        </div>
-
-        <p class="para1">📍 New York, USA</p>
-        <p class="para2">📞 +1 234 567 890</p>
-        <p class="para3">✉️ info@sarab.com</p>
-
-        <p class="copy">
-            © 2026 SARAB Restaurant. All Rights Reserved.
-        </p>
-    </div>
-</footer>
-    
-</body>
-</html>
-
 
  
+
+    <nav class="navbar">
+
+        <div class="sub">
+            <img src="fork-and-spoon.png" alt="SARAB Logo">
+
+            <div>
+                <h2>SARAB</h2>
+                <h3>FAST FOOD & RESTAURANT</h3>
+            </div>
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="menu.html" class="active">MENU</a></li>
+            <li><a href="reservation.html">RESERVATION</a></li>
+            <li><a href="chef.html">CHEF</a></li>
+            <li><a href="review.html">REVIEW</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+    </nav>
+
+  
+
+    <section class="menu-area">
+
+        <div class="section-heading">
+            <p class="small-title">What's Cooking</p>
+            <h1>Our <span>Delicious</span> Menu</h1>
+            <div class="line"></div>
+        </div>
+
+
+        <div class="category-list">
+
+            <button class="category-btn active" data-filter="all">All</button>
+            <button class="category-btn" data-filter="burger">Burger</button>
+            <button class="category-btn" data-filter="pizza">Pizza</button>
+            <button class="category-btn" data-filter="chicken">Chicken</button>
+            <button class="category-btn" data-filter="wraps">Wraps</button>
+            <button class="category-btn" data-filter="desserts">Desserts</button>
+
+        </div>
+
+        
+
+        <div class="menu-grid">
+
+            <div class="menu-card" data-category="burger">
+
+                <div class="menu-image">
+                    <img src="img2.jpg" alt="Classic Smash Burger">
+                </div>
+
+                <div class="menu-info">
+                    <div class="menu-rating">★★★★★ <span>4.9 (128 reviews)</span></div>
+
+                    <h3>Classic Smash Burger</h3>
+
+                    <p>
+                        Double smashed patty, cheddar cheese,
+                        caramelized onions, house pickles and
+                        our legendary special sauce.
+                    </p>
+
+                    <div class="menu-bottom">
+                        <span class="price">$14.99</span>
+                        <span class="food-tag">BURGER</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-card" data-category="chicken">
+
+                <div class="menu-image">
+                    <img src="img3.jpg" alt="Nashville Hot Chicken">
+                </div>
+
+                <div class="menu-info">
+                    <div class="menu-rating">★★★★★ <span>5.0 (210 reviews)</span></div>
+
+                    <h3>Nashville Hot Chicken</h3>
+
+                    <p>
+                        Extra-crispy fried chicken tossed in
+                        our signature Nashville spice blend
+                        with honey drizzle and house pickles.
+                    </p>
+
+                    <div class="menu-bottom">
+                        <span class="price">$16.33</span>
+                        <span class="food-tag">CHICKEN</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-card" data-category="wraps">
+
+                <div class="menu-image">
+                    <img src="img4.jpg" alt="Loaded Fajita Wrap">
+                </div>
+
+                <div class="menu-info">
+                    <div class="menu-rating">★★★★☆ <span>4.8 (95 reviews)</span></div>
+
+                    <h3>Loaded Fajita Wrap</h3>
+
+                    <p>
+                        Grilled chicken strips, sautéed bell peppers,
+                        onions, sour cream, guacamole and salsa
+                        wrapped in a warm tortilla.
+                    </p>
+
+                    <div class="menu-bottom">
+                        <span class="price">$10.99</span>
+                        <span class="food-tag">WRAPS</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-card" data-category="pizza">
+
+                <div class="menu-image">
+                    <img src="img5.jpg" alt="Special Pizza">
+                </div>
+
+                <div class="menu-info">
+                    <div class="menu-rating">★★★★★ <span>4.9 (110 reviews)</span></div>
+
+                    <h3>Special Cheese Pizza</h3>
+
+                    <p>
+                        Freshly baked pizza with rich cheese,
+                        delicious toppings and our special
+                        restaurant sauce.
+                    </p>
+
+                    <div class="menu-bottom">
+                        <span class="price">$12.99</span>
+                        <span class="food-tag">PIZZA</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-card" data-category="desserts">
+
+                <div class="menu-image">
+                    <img src="img7.jpg" alt="Sweet Dessert">
+                </div>
+
+                <div class="menu-info">
+                    <div class="menu-rating">★★★★☆ <span>4.8 (95 reviews)</span></div>
+
+                    <h3>Special Dessert</h3>
+
+                    <p>
+                        A delicious sweet treat made with
+                        carefully selected ingredients for
+                        a perfect finish to your meal.
+                    </p>
+
+                    <div class="menu-bottom">
+                        <span class="price">$8.99</span>
+                        <span class="food-tag">DESSERT</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="hero">
+
+        <div class="offer-content">
+
+            <span class="offer">⚡ LIMITED TIME OFFER</span>
+
+            <h2>
+                Get 30% Off
+                Our Signature
+                <span class="orange">Burger</span> Meal
+            </h2>
+
+            <p>
+                Don't miss our weekend special! Grab our signature
+                burger combo with loaded fries and a premium shake
+                at a special price.
+            </p>
+
+            <div class="timer">
+
+                <div class="box">
+                    <h3>08</h3>
+                    <p>Hours</p>
+                </div>
+
+                <div class="box">
+                    <h3>44</h3>
+                    <p>Minutes</p>
+                </div>
+
+                <div class="box">
+                    <h3>31</h3>
+                    <p>Seconds</p>
+                </div>
+
+            </div>
+
+            <button class="deal-btn" onclick="window.location.href='reservation.html'">
+                Grab The Deal →
+            </button>
+
+        </div>
+
+        <div class="offer-image">
+            <img src="off-img.jpg" alt="Signature Burger" class="burger-img">
+        </div>
+
+    </section>
+
+   
+
+    <section class="food1">
+
+        <div class="section-heading">
+            <p class="small-title">Food Showcase</p>
+            <h1>Let's See Our <span>Fast Food</span></h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="food-grid">
+            <img src="img2.jpg" alt="Burger" class="big">
+            <img src="img3.jpg" alt="Chicken">
+            <img src="img4.jpg" alt="Wrap">
+            <img src="img5.jpg" alt="Pizza">
+            <img src="img7.jpg" alt="Dessert">
+        </div>
+
+    </section>
+
+
+
+    <section class="history">
+
+        <div class="section-heading">
+            <p class="small-title">Our Journey</p>
+            <h1>A History of <span>Restaurant</span></h1>
+            <p class="description">
+                From humble beginnings to a beloved restaurant,
+                every chapter is written with passion.
+            </p>
+            <div class="line"></div>
+        </div>
+
+        <div class="timeline">
+
+            <div class="history-container left">
+                <h3>2012</h3>
+                <h2>Our First Restaurant</h2>
+                <p>
+                    SARAB opens its first 20-seat diner on
+                    Flavor Street. Within three months,
+                    our food starts attracting loyal customers.
+                </p>
+            </div>
+
+            <div class="history-container right">
+                <h3>2015</h3>
+                <h2>Fine Dining & New Ideas</h2>
+                <p>
+                    Expanding our vision, we introduced our
+                    signature tasting menu and welcomed
+                    our first professional chef.
+                </p>
+            </div>
+
+            <div class="history-container left">
+                <h3>2019</h3>
+                <h2>Modern Fast Food</h2>
+                <p>
+                    Launched our signature fast-food line,
+                    merging quality ingredients with speed
+                    and convenience.
+                </p>
+            </div>
+
+            <div class="history-container right">
+                <h3>2026</h3>
+                <h2>Growing Together</h2>
+                <p>
+                    Continuing our journey with new flavours,
+                    fresh ideas and a commitment to
+                    making every meal memorable.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h2>SARAB</h2>
+            <p>Good Food. Good Mood. Great Memories.</p>
+
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="chef.html">Chef</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <p>📍 New York, USA</p>
+                <p>📞 +1 234 567 890</p>
+                <p>✉️ info@sarab.com</p>
+            </div>
+
+            <p class="copy">
+                © 2026 SARAB Restaurant. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        
+
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+
+        
+
+        const filterButtons = document.querySelectorAll(".category-btn");
+        const menuCards = document.querySelectorAll(".menu-card");
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const filterValue = button.dataset.filter;
+
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                menuCards.forEach(card => {
+
+                    if (
+                        filterValue === "all" ||
+                        card.dataset.category === filterValue
+                    ) {
+                        card.classList.remove("hide");
+                    } else {
+                        card.classList.add("hide");
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
